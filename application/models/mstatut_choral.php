@@ -1,8 +1,8 @@
 <?php
 
-class Mpresentation_choral extends CI_Model {
+class Mstatut_choral extends CI_Model {
 
-    var $table = 'presentation_choral';
+    var $table = 'statut_choral';
 
     function __construct() {
         // Call the Model constructor

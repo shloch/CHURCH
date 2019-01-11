@@ -13,7 +13,7 @@ class Presentation_chorale extends CI_Controller {
         //$this->load->model('Mcompany', 'company');
 		//$this->load->model('Maward', 'award');
         $this->load->helper('file');
-        $this->output->enable_profiler(TRUE);
+        //$this->output->enable_profiler(TRUE);
     }
 
 	public function index()

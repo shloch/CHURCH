@@ -18,7 +18,7 @@
 		        </a>
 		        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 		          <a class="dropdown-item" href="<?php echo base_url().'index.php/admin_presentation_chorale'; ?>">Presentation chorale</a>
-		          <a class="dropdown-item" href="<?php echo base_url().'index.php/admin_statut'; ?>">Status de la chorale</a>
+		          <a class="dropdown-item" href="<?php echo base_url().'index.php/admin_statut_choral'; ?>">Status de la chorale</a>
 		          <div class="dropdown-divider"></div>
 		          <a class="dropdown-item" href="<?php echo base_url().'index.php/admin_reglement'; ?>">Reglement interieur</a>
 		        </div>

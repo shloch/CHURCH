@@ -13,7 +13,7 @@
                 <input type="text" name="login" value="" size="50" /> <br/> <br/>
 
                 <label>Pass</label>
-                <input type="text" name="password" value="" size="50" />
+                <input type="password" name="password" value="" size="50" />
         </div>
 
         <div><input type="submit" value="Submit" /></div>

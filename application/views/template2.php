@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="<?php echo base_url() ?>css/galerieImages.css">
     <link rel="stylesheet" href="<?php echo base_url() ?>css/galerieVideos.css">
     <link rel="stylesheet" href="<?php echo base_url() ?>css/contact.css">
+    <link rel="stylesheet" href="<?php echo base_url() ?>css/admin_content.css">
 	
 <!-- Calender CSS -->
     <link href='<?php echo base_url();?>css/fullcalendar.min.css' rel='stylesheet' />

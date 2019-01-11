@@ -1,0 +1,41 @@
+#admin_content h2 {
+    text-align: center;
+}
+
+#admin_content {
+    width: 70%;
+    margin: auto;
+}
+
+.submit {
+    text-align: center;
+}
+
+.updateStatus {
+    text-align: center;
+    color: green;
+}
+
+
+/*footer styling*/
+
+.footer_admin {
+    width: 100%;
+    height: auto;
+    background-color: #000;
+    margin-top: 30px;
+    padding: 5px;
+    text-align: center;
+}
+
+.footer_admin a {
+    padding: 3px;
+    color: #219433;
+    text-decoration: underline;
+}
+
+.footer_admin a:hover {
+    padding: 3px;
+    color: #FFFFFF;
+    text-decoration: none;
+}
