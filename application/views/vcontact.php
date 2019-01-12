@@ -7,7 +7,8 @@
 				<h2 class="display-4">Notre Adresse</h2>
 				<p class="lead">La chorale Lwanga Kisito est situe a <a href="#googleMap">Nkoldongo, Yaounde.</a></p>
 				<hr class="my-4">
-				<p>Email: vous@example.com</p>
+        <p>Email: contact@lwangakisito.cm</p>
+        <p> Boite Postale : 6684 Yaounde </p>
 				<p>Hotline: +237 xxx xx xx xx</p>
 			</div>
     </div>

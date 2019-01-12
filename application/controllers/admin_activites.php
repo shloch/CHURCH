@@ -25,40 +25,110 @@ class Admin_activites extends CI_Controller {
 	{
         $logged = $this->session->userdata('member_id');
         if (isset($logged) && $logged != FALSE) {
-            $data['title'] = "Reglement interieur de la  Chorale";
-            $data['include'] = "admin/regelement_chorale.php";
-            $statut = $this->db_table->getText();
-            if ($statut != FALSE) {
-                $data['statut'] = $statut;
+            $data['title'] = "Modifier les Activites de la  Chorale";
+            $data['include'] = "admin/activites_chorale.php";
+            $rows = $this->db_table->selectAll();
+            if ($rows != FALSE) {
+                $data['rows'] = $rows;
             }
-            
-            
+                   
             $this->load->view('template2', $data);
         }else {
             redirect('admin','refresh');
         }
     }
-    
-    
 
-    function update() {
-		if (isset($_POST)) {// if posted
-			$this->form_validation->set_rules('present_txt', 'PRESENTATION TEXT', 'required');
+    public function add() {
+        $logged = $this->session->userdata('member_id');
+        if (isset($logged) && $logged != FALSE) {
+            $data['title'] = "Ajouter une Activite de la  Chorale";
+            $data['include'] = "admin/add_activites_chorale.php";    
+            $this->load->view('template2', $data);
+        }else {
+            redirect('admin','refresh');
+        }
+    }
+
+    public function edit($ID)
+	{
+        $logged = $this->session->userdata('member_id');
+        if (isset($logged) && $logged != FALSE) {
+            $data['title'] = "Modifier les Activites de la  Chorale";
+            $data['include'] = "admin/edit_activites_chorale.php";
+            $row = $this->db_table->selectByID($ID);
+            if ($row != FALSE) {
+                $data['row'] = $row;
+            }
+                   
+            $this->load->view('template2', $data);
+        }else {
+            redirect('admin','refresh');
+        }
+    }
+
+    function update($ID) {
+        if (isset($_POST)) {// if posted
+            $this->form_validation->set_rules('date_act', 'Date', 'required');
+            $this->form_validation->set_rules('libelle', 'Libelle', 'required');
+            $this->form_validation->set_rules('description', 'Description', 'required');
             if ($this->form_validation->run() == FALSE) {
-				$this->index();
+				$this->edit($ID);
             } else {
-                $text = $this->input->post('present_txt');
-                $updateStatus = $this->db_table->update($text);
+                $date_act = $this->input->post('date_act');
+                $libelle = $this->input->post('libelle');
+                $description = $this->input->post('description');
+
+                $updateStatus = $this->db_table->update($ID, $date_act, $libelle, $description);
                 if ($updateStatus == TRUE) {
                     $this->session->set_flashdata('success', "MISE A JOUR AVEC SUCCESS  !!!");
                 }else{
                     $this->session->set_flashdata('error', "ERREUR DE MISE A JOUR");
                 }
-                redirect('admin_reglement','refresh');
+                redirect('Admin_activites/edit/'.$ID,'refresh');
                 
             }
+        }else{
+            redirect('Admin_activites','refresh');
         }
-    
     }
+
+    function delete($ID) {
+        $logged = $this->session->userdata('member_id');
+        if (isset($logged) && $logged != FALSE) {
+            $row = $this->db_table->delete($ID);
+            redirect('Admin_activites','refresh');
+        }else {
+            redirect('admin','refresh');
+        }
+    }
+
+    
+    function save() {
+        if (isset($_POST)) {// if posted
+            $this->form_validation->set_rules('date_act', 'Date', 'required');
+            $this->form_validation->set_rules('libelle', 'Libelle', 'required');
+            $this->form_validation->set_rules('description', 'Description', 'required');
+            if ($this->form_validation->run() == FALSE) {
+				$this->add();
+            } else {
+                $date_act = $this->input->post('date_act');
+                $libelle = $this->input->post('libelle');
+                $description = $this->input->post('description');
+
+                $updateStatus = $this->db_table->save($date_act, $libelle, $description);
+                if ($updateStatus == TRUE) {
+                    $this->session->set_flashdata('success', "MISE A JOUR AVEC SUCCESS  !!!");
+                }else{
+                    $this->session->set_flashdata('error', "ERREUR DE MISE A JOUR");
+                }
+                redirect('Admin_activites','refresh');
+                
+            }
+        }else{
+            redirect('Admin_activites','refresh');
+        }
+    }
+    
+    
 
 }

@@ -1,13 +1,13 @@
-<section id='activites'>
-		<div class="member-title">
-			<h3 class="membres">Nos Activites du mois</h3>
-		</div>
-	<div class="container">
-		<p class="lead">
-		    Retrouvez tous les program de la chorale!
-		</p>
 
-		    <hr />
+
+<section id='activites'>
+<center><h2> <?php echo $title; ?> </h2>
+
+<a href="<?php echo base_url().'index.php/Admin_activites/add/'; ?>"  title="Ajouter une activite"> <img src="<?php echo base_url(); ?>img/add.jpeg" alt="+"/> AJOUTER UNE ACTIVITE</a><br/><br/>
+</center>
+	<div class="container">
+		
+
 
 		    <div class="agenda">
 		        <div class="table-responsive">
@@ -20,7 +20,8 @@
 		                    </tr>
 		                </thead>
 		                <tbody>
-		                     
+		                   
+		                    
 		                    <!-- Multiple events in a single day (note the rowspan) -->
 		                    <?php 
                             foreach ($rows as $row) {
@@ -40,7 +41,10 @@
 		                        <td class="agenda-description">
 		                            <p><?php echo $row->description; ?></p>
                                 </td>
-                                
+                                <td class="agenda-description">
+                                    <a href="<?php echo base_url().'index.php/Admin_activites/edit/'.$row->id; ?>" title="modifier"> <img src="<?php echo base_url(); ?>img/edit.jpeg" alt="modifier"/> </a><br/><br/>
+                                    <a href="<?php echo base_url().'index.php/Admin_activites/delete/'.$row->id; ?>"  title="supprimer"> <img src="<?php echo base_url(); ?>img/del.jpeg" alt="supprimer"/> </a><br/>
+		                        </td>
                             </tr>
                             <?php
                             }
@@ -52,11 +56,3 @@
 		</div>
 
 	</section>
-
-
-  <hr />
-	
-    <!------comment section --->
-  <?php $this->load->view($comments); ?>
-  <!------comment section [END]--->
-		
