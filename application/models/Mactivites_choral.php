@@ -15,7 +15,6 @@ class Mactivites_choral extends CI_Model {
      */
     function selectAll() {
         $this->db->select('*');
-        $this->db->order_by('id', 'DESC');
         //$this->db->where('username', $username);
         $query = $this->db->get($this->table);
         if ($query->num_rows() > 0) {

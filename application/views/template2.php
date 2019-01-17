@@ -74,7 +74,8 @@
     <!-----TinyMCE ----->
     <script src="<?php echo base_url() ?>js/tinymce/tinymce.min.js"></script>
     <script>tinymce.init({ selector:'textarea' });</script>
-    
+
+
 </body>
 
 </html>
