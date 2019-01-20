@@ -78,29 +78,27 @@
 			<div id="info-content">
 				<div id="container">
 					<h2>Les Derniers Infos</h2>
-					<p class="main-text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-
-	 </p>
+					<p class="main-text"> <?php echo $row['derniere_infos']; ?> </p>
 					<div class="card-group">
 						<div class="card p-3">
 							<img class="card-img-top" src="<?php echo base_url() ?>img/equipe1.jpeg" alt="Card image cap">
 							<div class="card-body">
 								<h5 class="card-title">Recruitement</h5>
-								<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+								<p class="card-text"> <?php echo $row['recruitement']; ?> </p>
 							</div>
 						</div>
 						<div class="card p-3">
 							<img class="card-img-top" src="<?php echo base_url() ?>img/equipe1.jpeg" alt="Card image cap">
 							<div class="card-body">
 								<h5 class="card-title">Repetitions</h5>
-								<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+								<p class="card-text"> <?php echo $row['repetitions']; ?>  </p>
 							</div>
 						</div>
 						<div class="card p-3">
 							<img class="card-img-top" src="<?php echo base_url() ?>img/equipe1.jpeg" alt="Card image cap">
 							<div class="card-body">
 								<h5 class="card-title">Nous Chantons</h5>
-								<p class="card-text">TLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veni.</p>
+								<p class="card-text">  <?php echo $row['nous_chantons']; ?> </p>
 							</div>
 						</div>
 					</div>

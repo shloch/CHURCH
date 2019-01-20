@@ -1,14 +1,14 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Admin_notre_equipe extends CI_Controller {
+class Admin_ilsEnParlent extends CI_Controller {
 
     function __construct() {
         parent::__construct();
         $this->load->helper(array('form', 'url'));
         $this->load->library('form_validation');
         $this->load->helper('captcha');
-        $this->load->model('Mnotre_equipe', 'db_table');
+        $this->load->model('Mil_en_parlent', 'db_table');
         //$this->load->model('Mskills', 'skills');
         //$this->load->model('Mcompany', 'company');
 		//$this->load->model('Maward', 'award');
@@ -25,8 +25,8 @@ class Admin_notre_equipe extends CI_Controller {
 	{
         $logged = $this->session->userdata('member_id');
         if (isset($logged) && $logged != FALSE) {
-            $data['title'] = "Notre Equipe";
-            $data['include'] = "admin/notre_equipe.php";
+            $data['title'] = "ILS EN PARLENT";
+            $data['include'] = "admin/il_en_parlent.php";
             $data['error'] = "";
             $rows = $this->db_table->selectAll(); //returns result() or FALSE
             $data['rows'] = $rows;
@@ -59,7 +59,7 @@ class Admin_notre_equipe extends CI_Controller {
             }
             
             $row = $this->db_table->delete($ID);
-            redirect('Admin_notre_equipe','refresh');
+            redirect('Admin_ilsEnParlent','refresh');
         }else {
             redirect('admin','refresh');
         }
@@ -71,7 +71,7 @@ class Admin_notre_equipe extends CI_Controller {
         if (isset($logged) && $logged != FALSE) {
             $row = $this->db_table->selectByID($ID);
             $data['title'] = 'Ajouter la Photo de <strong>'. $row['nom'] .' </strong>';
-            $data['include'] = "admin/add_photo_membre.php";
+            $data['include'] = "admin/add_photo_membre2.php";
             $data['error'] = "";
             $data['ID'] = $ID;
             $data['nom'] = $row['nom'];
@@ -97,19 +97,20 @@ class Admin_notre_equipe extends CI_Controller {
             } else {
                 $nom = $this->input->post('nom');
                 $role = $this->input->post('role');
+                $msg = $this->input->post('msg');
 
-                $updateStatus = $this->db_table->save($nom, $role);
+                $updateStatus = $this->db_table->save($nom, $role, $msg);
                 if ($updateStatus == TRUE) {
                     $row = $this->db_table->selectByNameAndRole($nom, $role);
-                    redirect('Admin_notre_equipe/addPhoto/'.$row['id'],'refresh');
+                    redirect('Admin_ilsEnParlent/addPhoto/'.$row['id'],'refresh');
                 }else{
                     $this->session->set_flashdata('error', "ERREUR DE MISE A JOUR");
                 }
-                redirect('Admin_notre_equipe','refresh');
+                redirect('Admin_ilsEnParlent','refresh');
                 
             }
         }else{
-            redirect('Admin_notre_equipe','refresh');
+            redirect('Admin_ilsEnParlent','refresh');
         }
     }
     
@@ -117,8 +118,8 @@ class Admin_notre_equipe extends CI_Controller {
     public function add() {
         $logged = $this->session->userdata('member_id');
         if (isset($logged) && $logged != FALSE) {
-            $data['title'] = "Ajouter un membre de l'equipe";
-            $data['include'] = "admin/add_membre_equipe.php";    
+            $data['title'] = "Ajouter le message d'un membre";
+            $data['include'] = "admin/add_msg_ils_parlent.php";    
             $this->load->view('template2', $data);
         }else {
             redirect('admin','refresh');
@@ -140,7 +141,7 @@ class Admin_notre_equipe extends CI_Controller {
                 }else{
                     $this->session->set_flashdata('error', "ERREUR DE MISE A JOUR");
                 }
-                redirect('admin_presentation_chorale/index','refresh');
+                redirect('Admin_ilsEnParlent/index','refresh');
                 
             }
         }

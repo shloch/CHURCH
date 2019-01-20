@@ -1,3 +1,5 @@
+
+
 <footer class="footer">
 				<a class="media-left" href="<?php echo base_url().'index.php/contact'; ?>">Contact</a>
 				<span></span>

@@ -1,18 +1,19 @@
 <?php
 
-class Mnotre_equipe extends CI_Model {
+class Mcomments extends CI_Model {
 
-    var $table = 'notre_equipe';
+    var $table = 'comments';
 
     function __construct() {
         // Call the Model constructor
         parent::__construct();
     }
 
-    function save($nom, $role) {
+    function save($prenom, $msg, $comment_time) {
         $data = array(
-            'nom' => $nom,
-            'role' => $role   
+            'prenom' => $prenom,
+            'msg' => $msg,
+            'comment_date' => $comment_time 
         );
         $this->db->insert($this->table, $data);
         if ($this->db->affected_rows() > 0 ) {

@@ -8,7 +8,11 @@
 
 		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
 		    <ul class="navbar-nav mx-auto">
-		      
+
+				<li class="nav-item nav-link active">
+		        <a class="nav-item" href="<?php echo base_url().'index.php/admin_acceuil'; ?>">ACCEUIL</a>
+					</li>
+					
 		      <li class="nav-item nav-link active">
 		        <a class="nav-item" href="<?php echo base_url().'index.php/admin_notre_equipe'; ?>">Notre Equipe</a>
 		      </li>
@@ -30,7 +34,7 @@
 		        <a class="nav-item" href="<?php echo base_url().'index.php/admin_activites'; ?>">Nos Activites</a>
 		      </li>
 		      <li class="nav-item nav-link">
-		        <a class="nav-item" href="<?php echo base_url().'index.php/admin_ilsEnParlent'; ?>">Ils en parlent</a>
+		        <a class="nav-item" href="<?php echo base_url().'index.php/Admin_ilsEnParlent'; ?>">Ils en parlent</a>
 		      </li>
 		      <li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" href="#" id="secondNavbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

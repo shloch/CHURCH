@@ -4,79 +4,40 @@
 		   <h3 class="membres">Nos Membres</h3>
 		</div>
 
-		<div class="card-columns">
-		  <div class="card p-3">
-		    <img class="card-img-top" src="<?php echo base_url() ?>img/equipe1.jpeg" alt="Card image cap">
-		    <div class="card-body">
-		      <h5 class="card-title">Le nom du membres</h5>
-		      <hr>
-		      <p class="card-text">Le fondateur.</p>
-		    </div>
-		  </div>
-		  <div class="card p-3">
-		    <img class="card-img-top" src="<?php echo base_url() ?>img/equipe1.jpeg" alt="Card image cap">
-		    <div class="card-body">
-		      <h5 class="card-title">Nom du membre</h5>
-		      <hr>
-		      <p class="card-text">Le Representant.</p>
-		    </div>
-		  </div>
-		  <div class="card p-3">
-		    <img class="card-img-top" src="<?php echo base_url() ?>img/equipe1.jpeg" alt="Card image cap">
-		    <div class="card-body">
-		      <h5 class="card-title">Nom du membre</h5>
-		      <hr>
-		      <p class="card-text">La president.</p>
-		    </div>
-		  </div>
-		  <div class="card p-3">
-		    <img class="card-img-top" src="<?php echo base_url() ?>img/equipe1.jpeg" alt="Card image cap">
-		    <div class="card-body">
-		      <h5 class="card-title">Nom du membre</h5>
-		      <hr>
-		      <p class="card-text">la secretaire.</p>
-		    </div>
-		  </div>
-		  <div class="card p-3">
-		    <img class="card-img-top" src="<?php echo base_url() ?>img/equipe1.jpeg" alt="Card image cap">
-		    <div class="card-body">
-		      <h5 class="card-title">Nom du membre</h5>
-		      <hr>
-		      <p class="card-text">Chef d'equipe.</p>
-		    </div>
-		  </div>
-		  <div class="card p-3">
-		    <img class="card-img-top" src="<?php echo base_url() ?>img/equipe1.jpeg" alt="Card image cap">
-		    <div class="card-body">
-		      <h5 class="card-title">Nom du membre</h5>
-		      <hr>
-		      <p class="card-text">Le pianiste.</p>
-		    </div>
-		  </div>
-		  <div class="card p-3">
-		    <img class="card-img-top" src="<?php echo base_url() ?>img/equipe1.jpeg" alt="Card image cap">
-		    <div class="card-body">
-		      <h5 class="card-title">Nom du membre</h5>
-		      <hr>
-		      <p class="card-text">Le basiste.</p>
-		    </div>
-			</div>
-			<div class="card p-3">
-					<img class="card-img-top" src="<?php echo base_url() ?>img/equipe1.jpeg" alt="Card image cap">
-					<div class="card-body">
-						<h5 class="card-title">Nom du membre</h5>
-						<hr>
-						<p class="card-text">Le pianiste.</p>
-					</div>
-				</div>
-				<div class="card p-3">
-					<img class="card-img-top" src="<?php echo base_url() ?>img/equipe1.jpeg" alt="Card image cap">
-					<div class="card-body">
-						<h5 class="card-title">Nom du membre</h5>
-						<hr>
-						<p class="card-text">Le basiste.</p>
-					</div>
-				</div>
+		<?php
+				if ($rows == FALSE) {
+					echo "<center><br/><br/><h2> AUCUN MEMBRE POUR L'INSTANT !!!</h2></center>";
+				} else {
+					?>
+					<div class="card-columns">
+					<?php
+					foreach ($rows as $row) { 
+			    ?>
+					
+						<div class="card p-3">
+								<?php
+										if ($row->photo_url == 'NONE') {
+										?>
+												<img class="card-img-top" src="<?php echo base_url().'img/notre_equipe/default.jpeg';?>" alt="Photo Membre">
+										<?php
+										} else {
+										?>
+												<img class="card-img-top" src="<?php echo base_url().'img/notre_equipe/'.$row->photo_url;?>" alt="Photo Membre">
+										<?php
+										}
+								?>
+							<div class="card-body">
+								<h5 class="card-title"><?php echo $row->nom; ?></h5>
+								<hr>
+								<p class="card-text"><?php echo $row->role; ?></p>
+							</div>
+						</div>
+
+			<?php 
+				}
+			}
+			?>
+
 		</div>
 	</section>
 

@@ -52,6 +52,9 @@ class Admin extends CI_Controller {
         $data['title'] = "Log into your account";
         $data['include'] = "admin/login_page.php";
 
+        $captcha_folder = './img/captcha/';
+		delete_files($captcha_folder);
+
         $this->load->view('template2', $data);
 	}
 

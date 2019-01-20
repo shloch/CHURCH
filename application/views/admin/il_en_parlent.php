@@ -4,14 +4,14 @@
 <center><h2> <?php echo $title; ?> </h2>
 
 
-<a href="<?php echo base_url().'index.php/Admin_notre_equipe/add/'; ?>"  title="Ajouter un membre"> <img src="<?php echo base_url(); ?>img/add.jpeg" alt="+"/> AJOUTER UN MEMBRE</a><br/><br/>
+<a href="<?php echo base_url().'index.php/Admin_ilsEnParlent/add/'; ?>"  title="Ajouter un membre avec son message"> <img src="<?php echo base_url(); ?>img/add.jpeg" alt="+"/> AJOUTER UN MEMBRE AVEC SON MESSAGE</a><br/><br/>
 </center>
 	<div class="container">
 		
 
 			<?php
 				if ($rows == FALSE) {
-					echo "<center><br/><br/><h2> AUCUN MEMBRE POUR L'INSTANT !!!</h2></center>";
+					echo "<center><br/><br/><h2> AUCUN MESSAGE POUR L'INSTANT !!!</h2></center>";
 				} else {
 
 			?>
@@ -22,7 +22,8 @@
 		                    <tr>
 		                        <th>Nom</th>
 		                        <th>Role </th>
-		                        <th>Photo</th>
+                                <th>msg</th>
+                                <th>Photo</th>
                                 <th>Supprimer</th>
 		                    </tr>
 		                </thead>
@@ -41,6 +42,10 @@
 
 		                        <td class="agenda-activites">
 		                            <p><?php echo $row->role; ?></p>
+                                </td>
+                                
+                                <td class="agenda-activites">
+		                            <p><?php echo $row->msg; ?></p>
 		                        </td>
 
 		                        <td class="agenda-description">
@@ -60,7 +65,7 @@
 
                                 <td class="agenda-description">
                                     
-                                    <a href="<?php echo base_url().'index.php/Admin_notre_equipe/delete/'.$row->id; ?>"  title="supprimer"> <img src="<?php echo base_url(); ?>img/del.jpeg" alt="supprimer"/> </a><br/>
+                                    <a href="<?php echo base_url().'index.php/Admin_ilsEnParlent/delete/'.$row->id; ?>"  title="supprimer"> <img src="<?php echo base_url(); ?>img/del.jpeg" alt="supprimer"/> </a><br/>
 		                        </td>
                             </tr>
                             <?php

@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="<?php echo base_url() ?>css/form.css" media="screen" name="add_photo">
 
 <br/><br/><h2> <?php echo $title; ?> </h2>
-<?php echo form_open_multipart('upload/do_upload/'.$ID);?>
+<?php echo form_open_multipart('upload/do_upload2/'.$ID);?>
 
 
         <fieldset>
@@ -22,7 +22,7 @@
             
             <p class="updateStatus"> <?php echo $error;?> </p><br/>
 
-            <p> <a href="<?php echo base_url().'index.php/Admin_notre_equipe/'; ?>" title="Sauter cette Etappe"> <img src="<?php echo base_url(); ?>img/next.jpg" alt="modifier"/> SAUTER CETTE ETAPE POUR PLUS TARD</a><br/><br/> </p>
+            <p> <a href="<?php echo base_url().'index.php/Admin_ilsEnParlent/'; ?>" title="Sauter cette Etappe"> <img src="<?php echo base_url(); ?>img/next.jpg" alt="modifier"/> SAUTER CETTE ETAPE POUR PLUS TARD</a><br/><br/> </p>
             
             <div><br/><input type="submit" value="upload"  /></div>
             </center>
