@@ -88,17 +88,17 @@
 							</div>
 						</div>
 						<div class="card p-3">
-							<img class="card-img-top" src="<?php echo base_url() ?>img/equipe1.jpeg" alt="Card image cap">
+							<img class="card-img-top" src="<?php echo base_url() ?>img/repetitions.jpg" alt="Card image cap">
 							<div class="card-body">
 								<h5 class="card-title">Repetitions</h5>
 								<p class="card-text"> <?php echo $row['repetitions']; ?>  </p>
 							</div>
 						</div>
 						<div class="card p-3">
-							<img class="card-img-top" src="<?php echo base_url() ?>img/equipe1.jpeg" alt="Card image cap">
+							<img class="card-img-top" src="<?php echo base_url() ?>img/nous_chantons.jpg" alt="Card image cap">
 							<div class="card-body">
 								<h5 class="card-title">Nous Chantons</h5>
-								<p class="card-text">  <?php echo $row['nous_chantons']; ?> </p>
+								<p class="card-text">  <?php echo $row['recruitement']; ?></p>
 							</div>
 						</div>
 					</div>
