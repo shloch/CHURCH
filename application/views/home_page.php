@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 	 <title>Chorale Lwanga Kisito</title>
-	 <link rel="icon" type= "<?php echo base_url() ?>image/jpg" href="img/logoIcon.jpg">
+	 <link rel="icon" type= "image/jpg" href="<?php echo base_url() ?>img/logoIcon.jpg">
 </head>
 
 <body>

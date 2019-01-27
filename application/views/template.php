@@ -25,7 +25,7 @@
 
 
 	 <title><?php echo $title; ?></title>
-	 <link rel="icon" type= "<?php echo base_url() ?>image/jpg" href="img/logoIcon.jpg">
+	 <link rel="icon" type= "image/jpg" href="<?php echo base_url() ?>img/logoIcon.jpg">
 </head>
 
 <body>

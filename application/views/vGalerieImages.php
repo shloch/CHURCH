@@ -8,158 +8,29 @@
                   
             <div class="tz-gallery">
               
-                <div class="row mb-3">
+                <div class="row">
+                <?php
+                if ($rows == FALSE) {
+					echo "<center><br/><br/><h2> AUCUNE PHOTO POUR L'INSTANT !!!</h2></center>";
+				} else {
+                    foreach ($rows as $row) { 
+				?>
                     <div class="col-md-4">
                       <div class="hovereffect">
-                            <a class="lightbox" href="<?php echo base_url(); ?>img/galeryPhoto/first.jpeg">
-                            <img src="<?php echo base_url(); ?>img/galeryPhoto/first.jpeg" alt="Park" class="card-img-top">
+                            <a class="lightbox" href="<?php echo base_url().'img/galeryPhoto/'.$row->photo_url;?>">
+                            <img src="<?php echo base_url().'img/galeryPhoto/'.$row->photo_url;?>" alt="Park" class="card-img-top">
                             </a>
                             <div class="overlay">
-                                <h2>ecrire quelque chose ici</h2>
-                                 <p>dire quelque chose de cette image Ici aussi</p>
+                                
+                                 <p> <?php echo $row->description; ?>  </p>
                             </div>
                       </div>
                     </div>
-                         
-                    <div class="col-md-4">
-                      <div class="hovereffect">
-                            <a class="lightbox" href="<?php echo base_url(); ?>img/galeryPhoto/second.jpeg">
-                            <img src="<?php echo base_url(); ?>img/galeryPhoto/second.jpeg" alt="Park" class="card-img-top">
-                            </a>
-                            <div class="overlay">
-                                <h2>Ecrire quelque chose ici</h2>
-                                <p>dire quelque chose de cette image Ici aussi</p>
-                            </div>
-                      </div>
-                    </div>
-                         
-                    <div class="col-md-4">
-                        <div class="hovereffect">
-                            <a class="lightbox" href="<?php echo base_url(); ?>img/galeryPhoto/third.jpeg">
-                            <img src="<?php echo base_url(); ?>img/galeryPhoto/third.jpeg" alt="Park" class="card-img-top">
-                            </a>
-                            <div class="overlay">
-                                <h2>Ecrire quelque chose ici</h2>
-                                <p>dire quelque chose de cette image Ici aussi</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row"> 
-                    <div class="col-md-4">
-                        <div class="hovereffect">
-                            <a class="lightbox" href="<?php echo base_url(); ?>img/galeryPhoto/fourth.jpeg">
-                            <img src="<?php echo base_url(); ?>img/galeryPhoto/fourth.jpeg" alt="Park" class="card-img-top">
-                            </a>
-                            <div class="overlay">
-                                <h2>Ecrire quelque chose ici</h2>
-                                <p>dire quelque chose de cette image Ici aussi</p>
-                            </div>
-                        </div>
-                    </div>
-                         
-                    <div class="col-md-4">
-                        <div class="hovereffect">
-                            <a class="lightbox" href="<?php echo base_url() ;?>img/galeryPhoto/fifth.jpeg">
-                            <img src="<?php echo base_url(); ?>img/galeryPhoto/fifth.jpeg" alt="Park" class="card-img-top">
-                            </a>
-                            <div class="overlay">
-                                <h2>Ecrire quelque chose ici</h2>
-                                <p>dire quelque chose de cette image Ici aussi</p>
-                            </div>
-                        </div>
-                    </div>
-                         
-                    <div class="col-md-4">
-                        <div class="hovereffect">
-                            <a class="lightbox" href="<?php echo base_url(); ?>img/galeryPhoto/sixth.jpeg">
-                            <img src="<?php echo base_url(); ?>img/galeryPhoto/sixth.jpeg" alt="Park" class="card-img-top">
-                            </a>
-                            <div class="overlay">
-                                <h2>Ecrire quelque chose ici</h2>
-                                <p>dire quelque chose de cette image Ici aussi</p>
-                            </div>
-                        </div>
-                    </div>
-                     
-                </div>
-                <div class="row"> 
-                    <div class="col-md-4">
-                        <div class="hovereffect">
-                            <a class="lightbox" href="<?php echo base_url(); ?>img/galeryPhoto/fourth.jpeg">
-                            <img src="<?php echo base_url(); ?>img/galeryPhoto/fourth.jpeg" alt="Park" class="card-img-top">
-                            </a>
-                            <div class="overlay">
-                                <h2>Ecrire quelque chose ici</h2>
-                                <p>dire quelque chose de cette image Ici aussi</p>
-                            </div>
-                        </div>
-                    </div>
-                         
-                    <div class="col-md-4">
-                        <div class="hovereffect">
-                            <a class="lightbox" href="<?php echo base_url(); ?>img/galeryPhoto/fifth.jpeg">
-                            <img src="<?php echo base_url(); ?>img/galeryPhoto/fifth.jpeg" alt="Park" class="card-img-top">
-                            </a>
-                            <div class="overlay">
-                                <h2>Ecrire quelque chose ici</h2>
-                                <p>dire quelque chose de cette image Ici aussi</p>
-                            </div>
-                        </div>
-                    </div>
-                         
-                    <div class="col-md-4">
-                        <div class="hovereffect">
-                            <a class="lightbox" href="<?php echo base_url(); ?>img/galeryPhoto/sixth.jpeg">
-                            <img src="<?php echo base_url(); ?>img/galeryPhoto/sixth.jpeg" alt="Park" class="card-img-top">
-                            </a>
-                            <div class="overlay">
-                                <h2>Ecrire quelque chose ici</h2>
-                                <p>dire quelque chose de cette image Ici aussi</p>
-                            </div>
-                        </div>
-                    </div>
-  
-                </div>
-
-                <div class="row"> 
-                    <div class="col-md-4">
-                        <div class="hovereffect">
-                            <a class="lightbox" href="<?php echo base_url(); ?>img/galeryPhoto/seventh.jpeg">
-                            <img src="<?php echo base_url(); ?>img/galeryPhoto/seventh.jpeg" alt="Park" class="card-img-top">
-                            </a>
-                            <div class="overlay">
-                                <h2>Ecrire quelque chose ici</h2>
-                                <p>dire quelque chose de cette image Ici aussi</p>
-                            </div>
-                        </div>
-                    </div>
-                         
-                    <div class="col-md-4">
-                        <div class="hovereffect">
-                            <a class="lightbox" href="<?php echo base_url(); ?>img/galeryPhoto/eight.jpeg">
-                            <img src="<?php echo base_url(); ?>img/galeryPhoto/eight.jpeg" alt="Park" class="card-img-top">
-                            </a>
-                            <div class="overlay">
-                                <h2>Ecrire quelque chose ici</h2>
-                                <p>dire quelque chose de cette image Ici aussi</p>
-                            </div>
-                        </div>
-                    </div>
-                         
-                    <div class="col-md-4">
-                        <div class="hovereffect">
-                            <a class="lightbox" href="<?php echo base_url(); ?>img/galeryPhoto/nine.jpeg">
-                            <img src="<?php echo base_url(); ?>img/galeryPhoto/nine.jpeg" alt="Park" class="card-img-top">
-                            </a>
-                            <div class="overlay">
-                                <h2>Ecrire quelque chose ici</h2>
-                                <p>dire quelque chose de cette image Ici aussi</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    
+                <?php 
+                }}
+				
+				?>
+                  
                      
                 </div>
               

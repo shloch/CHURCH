@@ -3,10 +3,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class GalerieImages extends CI_Controller {
 
+	function __construct() {
+		parent::__construct();
+		$this->load->model('Mgalerie_images', 'db_table');
+		$this->load->helper('captcha');
+        //$this->output->enable_profiler(TRUE);
+	}
 
 	public function index()
 	{
-        $data['title'] = "Chorale Lwanga Kisito - Ils en parlent";
+        $data['title'] = "Chorale Lwanga Kisito - Galerie Photos";
         $data['include'] = "vGalerieImages.php";
 		$data['comments'] = "comments.php";
 		// ============CAPTCHA===================================       
@@ -33,7 +39,9 @@ class GalerieImages extends CI_Controller {
 		);
 		$data['CAPTCHA'] = create_captcha($vals);
 		// ============CAPTCHA=================================== 
-        
+        $rows = $this->db_table->selectAll(); //returns result() or FALSE
+		$data['rows'] = $rows;
+		
 		$this->load->view('template', $data);
 	}
 }

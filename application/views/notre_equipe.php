@@ -9,6 +9,7 @@
 					echo "<center><br/><br/><h2> AUCUN MEMBRE POUR L'INSTANT !!!</h2></center>";
 				} else {
 					?>
+					
 					<div class="card-columns">
 					<?php
 					foreach ($rows as $row) { 
@@ -33,12 +34,12 @@
 							</div>
 						</div>
 
-			<?php 
+				<?php 
+					}
 				}
-			}
-			?>
+				?>
 
-		</div>
+			</div>
 	</section>
 
 	<hr />
