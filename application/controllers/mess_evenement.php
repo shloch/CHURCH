@@ -7,7 +7,8 @@ class Mess_evenement extends CI_Controller {
 	public function index()
 	{
         $data['title'] = "Chorale Lwanga Kisito - Mess et Evenement";
-		$data['comments'] = "comments.php";
+		$data['comments'] = "vmess_evenement.php";
+		$data['include'] = "vmess_evenement.php";
 		// ============CAPTCHA===================================       
 		$vals = array(
 			'img_path' => './img/captcha/',              
@@ -33,6 +34,6 @@ class Mess_evenement extends CI_Controller {
 		$data['CAPTCHA'] = create_captcha($vals);
 		// ============CAPTCHA=================================== 
         
-		$this->load->view('vmess_evenement', $data);
+		$this->load->view('template', $data);
 	}
 }

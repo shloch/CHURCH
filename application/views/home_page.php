@@ -77,20 +77,20 @@
 		<section id="infos">
 			<div id="info-content">
 				<div id="container">
-					<h2>Les Derniers Infos</h2>
+					<h2>Les Dernières Infos</h2>
 					<p class="main-text"> <?php echo $row['derniere_infos']; ?> </p>
 					<div class="card-group">
 						<div class="card p-3">
 							<img class="card-img-top" src="<?php echo base_url() ?>img/equipe1.jpeg" alt="Card image cap">
 							<div class="card-body">
-								<h5 class="card-title">Recruitement</h5>
+								<h5 class="card-title">Adhésion</h5>
 								<p class="card-text"> <?php echo $row['recruitement']; ?> </p>
 							</div>
 						</div>
 						<div class="card p-3">
 							<img class="card-img-top" src="<?php echo base_url() ?>img/repetitions.jpg" alt="Card image cap">
 							<div class="card-body">
-								<h5 class="card-title">Repetitions</h5>
+								<h5 class="card-title">Répetitions</h5>
 								<p class="card-text"> <?php echo $row['repetitions']; ?>  </p>
 							</div>
 						</div>
@@ -98,7 +98,7 @@
 							<img class="card-img-top" src="<?php echo base_url() ?>img/nous_chantons.jpg" alt="Card image cap">
 							<div class="card-body">
 								<h5 class="card-title">Nous Chantons</h5>
-								<p class="card-text">  <?php echo $row['recruitement']; ?></p>
+								<p class="card-text">  <?php echo $row['nous_chantons']; ?></p>
 							</div>
 						</div>
 					</div>

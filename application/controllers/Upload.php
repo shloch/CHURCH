@@ -36,6 +36,9 @@ class Upload extends CI_Controller {
             }
         }
 
+        /**
+         * photo notre_equipe
+         */
         public function do_upload($ID)
         {
                 

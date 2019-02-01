@@ -16,7 +16,6 @@ class Admin_notre_equipe extends CI_Controller {
         //$this->output->enable_profiler(TRUE);
     }
 
-
     /**
      * 
      *index function administration
