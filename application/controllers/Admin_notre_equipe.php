@@ -36,6 +36,36 @@ class Admin_notre_equipe extends CI_Controller {
         }
     }
 
+    function edit_member_img($ID) {
+        $logged = $this->session->userdata('member_id');
+        if (isset($logged) && $logged != FALSE) {
+            $row = $this->db_table->selectByID($ID);
+            $data['title'] = 'Modifier la Photo de <strong>'. $row['nom'] .' </strong>';
+            $data['include'] = "admin/edit_photo_membre.php";
+            $data['error'] = "";
+            $data['ID'] = $ID;
+            $data['nom'] = $row['nom'];
+            
+            
+            $this->load->view('template2', $data);
+        }else {
+            redirect('admin','refresh');
+        }
+    }
+
+    function edit_member($ID) {
+        $logged = $this->session->userdata('member_id');
+        if (isset($logged) && $logged != FALSE) {
+            $data['title'] = "Modifier informations membre de l'equipe";
+            $data['include'] = "admin/edit_membre_equipe.php";
+            $row = $this->db_table->selectByID($ID); 
+            $data['row'] = $row;   
+            $this->load->view('template2', $data);
+        }else {
+            redirect('admin','refresh');
+        }
+    }
+
     function delete($ID) {
         $logged = $this->session->userdata('member_id');
         if (isset($logged) && $logged != FALSE) {
@@ -126,22 +156,27 @@ class Admin_notre_equipe extends CI_Controller {
     
     
 
-    function update() {
+    function update($ID) {
 		if (isset($_POST)) {// if posted
-			$this->form_validation->set_rules('present_txt', 'PRESENTATION TEXT', 'required');
+            $this->form_validation->set_rules('nom', 'NOM', 'required');
+            $this->form_validation->set_rules('role', 'ROLE', 'required');
             if ($this->form_validation->run() == FALSE) {
-				$this->index();
+				$this->edit_member($ID);
             } else {
-                $text = $this->input->post('present_txt');
-                $updateStatus = $this->present_choral->update($text);
+                $nom = $this->input->post('nom');
+                $role = $this->input->post('role');
+
+                $updateStatus = $this->db_table->update($nom, $role);
                 if ($updateStatus == TRUE) {
-                    $this->session->set_flashdata('success', "MISE A JOUR AVEC SUCCESS");
+                    redirect('Admin_notre_equipe','refresh');
                 }else{
                     $this->session->set_flashdata('error', "ERREUR DE MISE A JOUR");
                 }
-                redirect('admin_presentation_chorale/index','refresh');
+                redirect('Admin_notre_equipe','refresh');
                 
             }
+        }else{
+            redirect('Admin_notre_equipe','refresh');
         }
     
     }

@@ -191,10 +191,10 @@ class Admin_mess_evenement extends CI_Controller {
             } else {
                 $datepicker = $this->input->post('datepicker');
 
-                $str_dates = explode("-", $datepicker);
-                //$month_array = array("", "janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre");
+                $str_dates = explode("-", $datepicker); //$month_array = array("", "janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre");
                 $month_int = $str_dates[1];
                 $timestamp = strtotime($datepicker); 
+                
                 $celebration = $this->input->post('celebration');
                 $has_link = $this->input->post('lien');
 

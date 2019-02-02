@@ -36,11 +36,17 @@
 
                             <tr>
 		                        <td class="agenda-date" class="active" rowspan="1">
-                                    <p><?php echo $row->nom; ?></p>
+                                    <p>
+										 <?php echo $row->nom; ?>
+									</p>
 		                        </td>
 
 		                        <td class="agenda-activites">
-		                            <p><?php echo $row->role; ?></p>
+		                            <p>
+										<?php echo $row->role; ?><br> <br>
+										<a href="<?php echo base_url().'index.php/Admin_notre_equipe/edit_member/'.$row->id; ?>"  title="editer"> <img src="<?php echo base_url(); ?>img/edit.jpeg" alt="Modifier NOM + ROLE"/> Modifier NOM + ROLE</a><br/>
+														
+									</p>
 		                        </td>
 
 		                        <td class="agenda-description">
@@ -56,6 +62,8 @@
                                         <?php
                                         }
                                     ?>
+									<a href="<?php echo base_url().'index.php/Admin_notre_equipe/edit_member_img/'.$row->id; ?>"  title="editer"> <img src="<?php echo base_url(); ?>img/edit.jpeg" alt="Modifier image"/> Modifier IMAGE</a>
+										
 		                        </td>
 
                                 <td class="agenda-description">
