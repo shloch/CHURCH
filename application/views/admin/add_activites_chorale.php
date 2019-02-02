@@ -12,12 +12,13 @@
             
             <div>
 
-                    <label>Date de l'activites [jj/mm/yyyy]</label><br/>
-                    <input type="text" name="date_act" value="" size="50" /> <br/> <br/>
+                  
+                    <label>Date de l'activites</label><br/>
+                    <input type="text" name="date_act" class="datepicker" size="50" placeholder="Clicker ici pour selectionner le jour"/> <br/> <br/>
 
 
                     <label>Activite</label><br/>
-                    <input type="text" name="libelle" value="" size="50" /> <br/> <br/>
+                    <input type="text" name="libelle" value="" size="50"  /> <br/> <br/>
 
                     <label>Description</label><br/>
                     <textarea name="description">  </textarea>
