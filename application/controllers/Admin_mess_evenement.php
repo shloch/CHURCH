@@ -12,7 +12,7 @@ class Admin_mess_evenement extends CI_Controller {
         $this->load->model('Mderoulement', 'db_deroulement');
         $this->load->model('Mchants', 'db_chant');
         $this->load->helper('file');
-        $this->output->enable_profiler(TRUE);
+        //$this->output->enable_profiler(TRUE);
     }
 
     /**

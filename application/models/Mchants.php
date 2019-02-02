@@ -85,6 +85,27 @@ class Mchants extends CI_Model {
         }
     }
 
+    function updateChantFieldDB($chantID, $fileName, $databaseField) {
+        $data = array(
+            $databaseField => $fileName
+        );
+        $this->db->where('id', $chantID);
+        $this->db->update($this->table, $data);
+        if ($this->db->affected_rows() > 0 ) {
+            return TRUE;
+        }
+        return FALSE;
+    }
+
+    function setDBField2zero($fieldDB, $chantID) {
+        $data = array(
+            $fieldDB => '0'
+        );
+        $this->db->where('id', $chantID);
+        $this->db->update($this->table, $data);
+        
+    }
+
     /**
      * save edited
      */

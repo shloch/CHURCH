@@ -1,7 +1,6 @@
 
 
 <section id='admin_content'>
-<link rel="stylesheet" href="<?php echo base_url() ?>css/form.css" media="screen" name="add_photo">
 
 <br/><br/><h2> <?php echo $title; ?> </h2><br/>
 <?php echo form_open_multipart('upload/do_upload/'.$ID);?>
@@ -14,7 +13,8 @@
             <div>
             dimensions max : 
             largeur : 1024 px
-            hauteur : 768 px
+            hauteur : 768 px <br>
+            Poid max : 860Kb
             </div>
             
             <div>          

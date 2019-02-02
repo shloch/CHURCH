@@ -46,7 +46,7 @@ class Admin_chant extends CI_Controller {
         if (isset($logged) && $logged != FALSE) {
             $data['title'] = "Modifier les Activites de la  Chorale";
             $data['include'] = "admin/edit_activites_chorale.php";
-            $row = $this->db_table->selectByID($ID);
+            $row = $this->db_chant->selectByID($ID);
             if ($row != FALSE) {
                 $data['row'] = $row;
             }
@@ -69,7 +69,7 @@ class Admin_chant extends CI_Controller {
                 $libelle = $this->input->post('libelle');
                 $description = $this->input->post('description');
 
-                $updateStatus = $this->db_table->update($ID, $date_act, $libelle, $description);
+                $updateStatus = $this->db_chant->update($ID, $date_act, $libelle, $description);
                 if ($updateStatus == TRUE) {
                     $this->session->set_flashdata('success', "MISE A JOUR AVEC SUCCESS  !!!");
                 }else{
@@ -83,14 +83,71 @@ class Admin_chant extends CI_Controller {
         }
     }
 
-    function delete($ID) {
+    function delete($chantID, $calenderID) {
         $logged = $this->session->userdata('member_id');
         if (isset($logged) && $logged != FALSE) {
-            $row = $this->db_table->delete($ID);
-            redirect('Admin_activites','refresh');
+            $row = $this->db_chant->delete($chantID);
+            redirect('Admin_mess_evenement/detail_event/'.$calenderID,'refresh');
         }else {
             redirect('admin','refresh');
         }
+    }
+
+    function edit_lyrics($chantID, $calenderID) {
+        $data['title'] = "Charger la reference du song pour telechargement";
+            $data['include'] = "admin/edit_lyrics.php";
+            $row = $this->db_chant->selectByID($chantID);
+            if ($row != FALSE) {
+                $data['row'] = $row;
+            }
+            $data['calenderID'] = $calenderID;
+            $data['error'] = "";
+                   
+        $this->load->view('template2', $data);
+    }
+
+    function del_chant($fieldDB, $chantID, $calenderID) {
+        $this->db_chant->setDBField2zero($fieldDB, $chantID);
+        redirect('Admin_mess_evenement/detail_event/'.$calenderID,'refresh');
+    }
+
+    function edit_cdo_page($chantID, $calenderID) {
+        $data['title'] = "Charger le fichier CDO PAGE telechargement";
+            $data['include'] = "admin/edit_cdo_page.php";
+            $row = $this->db_chant->selectByID($chantID);
+            if ($row != FALSE) {
+                $data['row'] = $row;
+            }
+            $data['calenderID'] = $calenderID;
+            $data['error'] = "";
+                   
+        $this->load->view('template2', $data);
+    }
+
+    function edit_cdo_nr($chantID, $calenderID) {
+        $data['title'] = "Charger le fichier CDO NR telechargement";
+            $data['include'] = "admin/edit_cdo_nr.php";
+            $row = $this->db_chant->selectByID($chantID);
+            if ($row != FALSE) {
+                $data['row'] = $row;
+            }
+            $data['calenderID'] = $calenderID;
+            $data['error'] = "";
+                   
+        $this->load->view('template2', $data);
+    }
+
+    function edit_cdo_mp3($chantID, $calenderID) {
+        $data['title'] = "Charger le fichier MP3 pour telechargement";
+        $data['include'] = "admin/edit_cdo_mp3.php";
+        $row = $this->db_chant->selectByID($chantID);
+        if ($row != FALSE) {
+            $data['row'] = $row;
+        }
+        $data['calenderID'] = $calenderID;
+        $data['error'] = '';
+                
+        $this->load->view('template2', $data);
     }
 
     

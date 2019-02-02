@@ -73,16 +73,67 @@ if ($all_chant != FALSE ) {
                                     <td class="column100 column1" data-column="column1"> <?php echo $chant->deroulement; ?> </td>
                                     <td class="column100 column1" data-column="column2"> <?php echo $chant->nom_chant; ?>  </td>
                                     <td class="column100 column2" data-column="column3"> 
-                                        <?php echo $chant->lyrics ; ?> 
-                                        <a href="<?php echo base_url().'index.php/Admin_chant/edit_lyrics/'.$chant->chantID; ?>" title="modifier fichier REFERENCE"> <img src="<?php echo base_url(); ?>img/edit.jpeg" alt="modifier fichier REFERENCE"/> </a> 
-                                        
+                                        <?php 
+                                            if ($chant->lyrics != '0') {
+                                                ?>
+                                                <a href="<?php echo base_url().'media/'.$chant->lyrics; ?>"> Fichier </a>
+                                                <?php
+                                            } else {
+                                                echo ' -- ';
+                                            }
+                                        ?> <br>
+                                        <a href="<?php echo base_url().'index.php/Admin_chant/edit_lyrics/'.$chant->chantID.'/'.$calenderID; ?>" title="modifier fichier REFERENCE"> <img src="<?php echo base_url(); ?>img/edit.jpeg" alt="modifier fichier REFERENCE"/> </a> 
+                                        <a href="<?php echo base_url().'index.php/Admin_chant/del_chant/reference/'.$chant->chantID.'/'.$calenderID; ?>" title="SUPPRIMER fichier REFERENCE"> <img src="<?php echo base_url(); ?>img/del.jpeg" alt="SUPPRIMER fichier REFERENCE"/> </a> 
+                                      
                                     </td>
-                                    <td class="column100 column3" data-column="column4"> <?php echo $chant->cdo_page; ?>  </td>
-                                    <td class="column100 column4" data-column="column5"> <?php echo $chant->cdo_nr; ?> </td>
-                                    <td class="column100 column5" data-column="column6"> <?php echo $chant->mp3; ?> </td>
+                                    <td class="column100 column3" data-column="column4"> 
+                                        <?php 
+                                            if ($chant->cdo_page != '0') {
+                                                ?>
+                                                <a href="<?php echo base_url().'media/'.$chant->cdo_page; ?>"> Fichier </a>
+                    
+                                                <?php
+                                            } else {
+                                                echo ' -- ';
+                                            }
+                                        ?><br>
+                                        <a href="<?php echo base_url().'index.php/Admin_chant/edit_cdo_page/'.$chant->chantID.'/'.$calenderID; ?>" title="modifier fichier CDO_PAGE"> <img src="<?php echo base_url(); ?>img/edit.jpeg" alt="modifier fichier CDO PAGE"/> </a> 
+                                        <a href="<?php echo base_url().'index.php/Admin_chant/del_chant/cdo_page/'.$chant->chantID.'/'.$calenderID; ?>" title="SUPPRIMER fichier CDO_PAGE"> <img src="<?php echo base_url(); ?>img/del.jpeg" alt="SUPPRIMER fichier CDO PAGE"/> </a> 
+                                      
+                                    </td>
+                                    <td class="column100 column4" data-column="column5"> 
+                                        <?php 
+                                            if ($chant->cdo_nr != '0') {
+                                                ?>
+                                                <a href="<?php echo base_url().'media/'.$chant->cdo_nr; ?>"> Fichier </a>
+                    
+                                                <?php
+                                            } else {
+                                                echo ' -- ';
+                                            }
+                                        ?><br>
+                                        <a href="<?php echo base_url().'index.php/Admin_chant/edit_cdo_nr/'.$chant->chantID.'/'.$calenderID; ?>" title="modifier fichier CDO_NR"> <img src="<?php echo base_url(); ?>img/edit.jpeg" alt="modifier fichier CDO NR"/> </a> 
+                                        <a href="<?php echo base_url().'index.php/Admin_chant/del_chant/cdo_nr/'.$chant->chantID.'/'.$calenderID; ?>" title="SUPPRIMER fichier CDO_NR"> <img src="<?php echo base_url(); ?>img/del.jpeg" alt="SUPPRIMER CDO NR"/> </a> 
+                                      
+                                    </td>
+                                    <td class="column100 column5" data-column="column6"> 
+                                        <?php 
+                                            if ($chant->mp3 != '0') {
+                                                ?>
+                                                <a href="<?php echo base_url().'media/'.$chant->mp3; ?>"> audio </a>
+                    
+                                                <?php
+                                            } else {
+                                                echo ' -- ';
+                                            }
+                                        ?><br>
+                                        <a href="<?php echo base_url().'index.php/Admin_chant/edit_cdo_mp3/'.$chant->chantID.'/'.$calenderID; ?>" title="modifier fichier mp3"> <img src="<?php echo base_url(); ?>img/edit.jpeg" alt="modifier fichier mp3"/> </a> 
+                                        <a href="<?php echo base_url().'index.php/Admin_chant/del_chant/mp3/'.$chant->chantID.'/'.$calenderID; ?>" title="supprimer fichier mp3"> <img src="<?php echo base_url(); ?>img/del.jpeg" alt="SUPPRIMER fichier mp3"/> </a> 
+                                      
+                                    </td>
                                     <td class="column100 column2" data-column="column3"> 
                                         
-                                        <a href="<?php echo base_url().'index.php/Admin_chant/delete_song/'.$chant->chantID; ?>" title="SUPPRIMER CE SONG"> <img src="<?php echo base_url(); ?>img/del.jpeg" alt="DELETE"/> </a> 
+                                        <a href="<?php echo base_url().'index.php/Admin_chant/delete/'.$chant->chantID.'/'.$calenderID; ?>" title="SUPPRIMER CE CHANT"> SUPPRIMER CHANT </a> 
                                         
                                     </td>
 								
@@ -103,6 +154,13 @@ if ($all_chant != FALSE ) {
 
 <?php 
 } else {
-   // echo ....... 'NO SONGS' .........;
+    echo '<br> <br><br> 
+          <center> 
+            AUCUN CHANT POUR L\'INSTANT !!!!  <br>
+            Pour Ajouter des chants, clicker sur symbol de Music pour chaque DEROULEMENT   <br>
+            <br><br>Pour returner a tous les MESSES et EVENEMENT  '; ?> 
+            <a href="<?php echo base_url().'index.php/admin_mess_evenement'?>"> CLICKER ICI </a>  
+    <?php
+    echo '</center>';
 }
 ?>

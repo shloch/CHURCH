@@ -7,6 +7,11 @@
     <form action="<?php echo base_url() . 'index.php/Admin_galerieImages/save/'; ?>" method="POST" id="signIn">
         <fieldset>
         <center>
+        <div>
+            dimensions max : 
+            largeur : 1200 px
+            hauteur : 860 px
+            </div>
             <!-- Email -->
             <?php echo validation_errors(); ?>
 

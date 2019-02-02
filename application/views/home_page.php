@@ -35,15 +35,16 @@
 					<div class="carousel-item active">
 						<img class="d-block w-100" src="<?php echo base_url() ?>img/equipe1.jpeg" alt="a microphone" class="container-fluid">
 						<div class="carousel-caption">
-						<h2>Bienvenue a Lwanga Kisito</h2>
-						<h3>Ici nous chantons pour la gloire du seigneur</h3>
-						<p>Retrouvez nous chaque mardi et vendredi de la semaine</p>
+						<h2>Bienvenue sur le site de Lwanga Kisito</h2>
+						<h3>Ici nous chantons pour la gloire du Seigneur</h3>
+						<p>Retrouvez-nous chaque vendredi et samedi
+à partir de 18h</p>
 						</div>
 					</div>
 					<div class="carousel-item">
 						<img class="d-block w-100" src="<?php echo base_url() ?>img/carousel3.jpeg" alt="Second slide" class="container-fluid">
 						<div class="carousel-caption">
-						<h3>Chanter c'est vivre</h3>
+						<h3>Pour moi, vivre c’est christ </h3>
 						<p>oh seigneur, que nous t'aimons</p>
 						</div>
 					</div>
