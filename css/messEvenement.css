@@ -65,17 +65,13 @@ a {
 
   /*Calendar styling (selectable.html)*/
 #calendar {
-    max-width: 900px;
+    max-width: 80%;
     margin: 0 auto;
     padding-top: 30px;
   }
-
-hr {
-	background-color: #71a812;
-  height:1px;
-  width: 80%;
+#second-container {
+  margin-top: 10%;
 }
-
 
 /*Comment box styling*/
 .pb-cmnt-container {

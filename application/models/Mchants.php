@@ -73,6 +73,69 @@ class Mchants extends CI_Model {
         }
     }
 
+
+    function selectAllByCalenderID2($calenderID) {
+        $data = array(
+            $this->table . '.id AS chantID',
+            $this->db_calender . '.id AS calenderID',
+            $this->db_calender . '.timestamp',      
+        );
+
+        $this->db->select($data);
+        $this->db->from($this->db_calender);
+        $this->db->join($this->db_deroulement, $this->table . '.derouelementID = ' . $this->db_deroulement . '.id', 'inner');
+        $this->db->join($this->db_calender, $this->table . '.calenderID = ' . $this->db_calender . '.id', 'inner');
+
+        $this->db->where($this->db_calender . '.id', $calenderID);
+        $this->db->order_by($this->table . '.derouelementID', 'ASC');
+        
+        $query = $this->db->get();
+        if ($query->num_rows() > 0) {
+            $rows = $query->result();
+            return $rows;
+        } else {
+            return FALSE;
+        }
+    }
+
+    /**
+     * select all songs by CALENDER_Id and by DEROUELEMENT_id
+     */
+    function selectAll_ByCalenderID_ByDeroulementID($calenderID, $deroulementID) {
+        $data = array(
+            $this->table . '.id AS chantID',
+            $this->table . '.nom_chant',
+            $this->table . '.reference AS lyrics',
+            $this->table . '.cdo_page',
+            $this->table . '.cdo_nr',
+            $this->table . '.mp3',
+            $this->db_deroulement . '.id AS deroulementID',
+            $this->db_deroulement . '.forme_ordinaire AS deroulement',
+            $this->db_calender . '.id AS calenderID',
+            $this->db_calender . '.timestamp',
+            $this->db_calender . '.celebration',
+            $this->db_calender . '.has_link',
+            $this->db_calender . '.month_int'
+        );
+
+        $this->db->select($data);
+        $this->db->from($this->table);
+        $this->db->join($this->db_deroulement, $this->table . '.derouelementID = ' . $this->db_deroulement . '.id', 'inner');
+        $this->db->join($this->db_calender, $this->table . '.calenderID = ' . $this->db_calender . '.id', 'inner');
+
+        $this->db->where($this->db_calender . '.id', $calenderID);
+        $this->db->where($this->db_deroulement . '.id', $deroulementID);
+        $this->db->order_by($this->table . '.derouelementID', 'ASC');
+        
+        $query = $this->db->get();
+        if ($query->num_rows() > 0) {
+            $rows = $query->result();
+            return $rows;
+        } else {
+            return FALSE;
+        }
+    }
+
     function selectByID($ID) {
         $this->db->select('*');
         $this->db->where('id', $ID);
