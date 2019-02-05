@@ -86,12 +86,12 @@ class Mnotre_equipe extends CI_Model {
     /**
      * update the Choire presentation text
      */
-    function update($nom, $role) {
+    function update($nom, $role, $ID) {
         $data = array(
             'nom' => $nom,
             'role' => $role
         );
-        //$this->db->where('member_id', $member_id);
+        $this->db->where('id', $ID);
         $this->db->update($this->table, $data);
         if ($this->db->affected_rows() > 0 ) {
             return TRUE;

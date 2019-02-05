@@ -166,7 +166,7 @@ class Admin_notre_equipe extends CI_Controller {
                 $nom = $this->input->post('nom');
                 $role = $this->input->post('role');
 
-                $updateStatus = $this->db_table->update($nom, $role);
+                $updateStatus = $this->db_table->update($nom, $role, $ID);
                 if ($updateStatus == TRUE) {
                     redirect('Admin_notre_equipe','refresh');
                 }else{

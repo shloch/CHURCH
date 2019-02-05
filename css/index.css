@@ -1,119 +1,130 @@
-
-html, body {
+html,
+body {
     margin: 0 auto;
     height: 100%;
 }
 
-.navbar-brand > img {
-  width:230px;
-  height:100px;
+.navbar-brand>img {
+    width: 230px;
+    height: 100px;
 }
 
 .navbar-light .navbar-nav .nav-link {
-  color: #219433;
+    color: #219433;
 }
 
 a:hover {
-  text-decoration: none;
-  background-color: none;
-  color: #000;
-}
-.dropdown-item:hover {
-  background-color: #71a812;
+    text-decoration: none;
+    background-color: none;
+    color: #000;
 }
 
+.dropdown-item:hover {
+    background-color: #71a812;
+}
 
 a {
-  color: #219433;
-  padding-right: 20px;
-  text-decoration: none;
+    color: #219433;
+    padding-right: 20px;
+    text-decoration: none;
 }
 
 .navbar-light .navbar-nav .active>.nav-item {
-  color: hotpink;
+    color: hotpink;
 }
 
 #carousel {
-  width:80%;
-  margin: auto;
+    width: 80%;
+    margin: auto;
 }
-.carousel-inner > .carousel-item > img {
-  width:80%;
-  height:460px;
+
+.carousel-inner>.carousel-item>img {
+    width: 80%;
+    height: 460px;
 }
 
 #infos {
     width: 70%;
     position: relative;
-    top:15px;
+    top: 15px;
     bottom: 0;
     left: 0;
     right: 0;
     margin: auto;
 }
 
-.card-group > .card > img {
-  width: 100%;
-  height:auto;
+.card-group>.card>img {
+    width: 100%;
+    height: auto;
 }
 
 .card-title {
-  font-weight: bolder;
-  text-decoration: underline #71a812;
+    font-weight: bolder;
+    text-decoration: underline #71a812;
 }
 
 hr {
-   margin-top: 40px;
-   width: 80%;
- }
+    margin-top: 40px;
+    width: 80%;
+}
+
 
 /*Comment box styling*/
+
 .pb-cmnt-container {
-  font-family: Lato;
-  margin-top: 100px;
-  margin-bottom: 20px;
+    font-family: Lato;
+    margin-top: 100px;
+    margin-bottom: 20px;
 }
 
 .pb-cmnt-textarea {
-  resize: none;
-  padding: 20px;
-  height: 130px;
-  width: 100%;
-  border: 1px solid #F2F2F2;
-}
-/*Comment-display box styling*/
-.user_name{
-  font-size:14px;
-  font-weight: bold;
+    resize: none;
+    padding: 20px;
+    height: 130px;
+    width: 100%;
+    border: 1px solid #F2F2F2;
 }
 
-.media-left > img {
-  width: 30px;
-  height: 35px;
-  padding: 2px;
+
+/*Comment-display box styling*/
+
+.user_name {
+    font-size: 14px;
+    font-weight: bold;
 }
-.comments-list .media{
-  border-bottom: 1px dotted #ccc;
-  padding: 5px;
+
+.media-left>img {
+    width: 30px;
+    height: 35px;
+    padding: 2px;
+}
+
+.comments-list .media {
+    border-bottom: 1px dotted #ccc;
+    padding: 5px;
 }
 
 
 /*footer styling*/
+
 .footer {
-	width: 100%;
-  height: auto;
-  background-color: #000;
-  margin-top: 30px;
-  padding: 5px;
-  text-align: center;
+    width: 100%;
+    height: auto;
+    background-color: #000;
+    margin-top: 30px;
+    padding: 5px;
+    text-align: center;
 }
-.footer span{
-  border-right: 2px solid #333;
+
+.footer span {
+    border-right: 2px solid #333;
 }
-.footer a{
-  padding: 3px;
-  color: #219433;
+
+.footer a {
+    padding: 3px;
+    color: #219433;
 }
-.footer p{
-  font-weight: bolder;
+
+.footer p {
+    font-weight: bolder;
 }
