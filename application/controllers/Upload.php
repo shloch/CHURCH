@@ -173,7 +173,7 @@ class Upload extends CI_Controller {
 
         function do_upload_lyrics($chantID, $calenderID) {
                 $config['upload_path']          =  './media/';
-                $config['allowed_types']        = 'gif|jpg|png|jpeg|pdf|doc|docx|txt';
+                $config['allowed_types']        = 'gif|jpg|png|jpeg|pdf|doc|docx|txt|mp3|wma|mp4';
                 $config['max_size']             = 10001;
                 $config['encrypt_name']           = TRUE;               
 
@@ -212,7 +212,7 @@ class Upload extends CI_Controller {
 
         function do_upload_cdo_page($chantID, $calenderID) {
                 $config['upload_path']          =  './media/';
-                $config['allowed_types']        = 'gif|jpg|png|jpeg|pdf|doc|docx|txt';
+                $config['allowed_types']        = 'gif|jpg|png|jpeg|pdf|doc|docx|txt|mp3|wma|mp4';
                 $config['max_size']             = 10001;
                 $config['encrypt_name']           = TRUE;               
 
@@ -251,7 +251,7 @@ class Upload extends CI_Controller {
 
         function do_upload_cdo_nr($chantID, $calenderID) {
                 $config['upload_path']          =  './media/';
-                $config['allowed_types']        = 'gif|jpg|png|jpeg|pdf|doc|docx|txt';
+                $config['allowed_types']        = 'gif|jpg|png|jpeg|pdf|doc|docx|txt|mp3|wma|mp4';
                 $config['max_size']             = 10001;
                 $config['encrypt_name']           = TRUE;               
 

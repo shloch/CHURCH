@@ -56,9 +56,9 @@ if ($all_chant != FALSE ) {
 							<tr class="row100 head">
 								<th class="column100 column1" data-column="column1">DEROULEMENT <br> FORME ORDINAIRE</th>
 								<th class="column100 column2" data-column="column2"> CHANTS</th>
-								<th class="column100 column3" data-column="column3">REFERENCE</th>
-								<th class="column100 column4" data-column="column4">C.D.O <br> PAGE</th>
-								<th class="column100 column5" data-column="column5">C.D.O <br> NR</th>
+								<th class="column100 column3" data-column="column3">PDF</th>
+								<th class="column100 column4" data-column="column4">SOPRANO <br> TENOR</th>
+								<th class="column100 column5" data-column="column5">ALTO <br> BASSE</th>
                                 <th class="column100 column6" data-column="column6"> MP3 </th>
                                 <th class="column100 column6" data-column="column7"> SUPPRIME <br> CHANT </th>
 							</tr>

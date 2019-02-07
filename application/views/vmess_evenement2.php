@@ -37,9 +37,9 @@ if ($getDates != FALSE) {
 							<tr>
 								<th scope="col">DEROULEMENT /<br> FORME ORDINAIRE <br> </th>
 								<th scope="col">CHANTS</th>
-								<th scope="col">REFERENCE</th>
-								<th scope="col">C.D.O PAGE</th>
-								<th scope="col">C.D.O NR</th>
+								<th scope="col">PDF</th>
+								<th scope="col"> SOPRANO <br> TENOR</th>
+								<th scope="col">ALTO <br> BASSE</th>
                                 <th scope="col">MP3</th>
 							</tr>
 						</thead>
