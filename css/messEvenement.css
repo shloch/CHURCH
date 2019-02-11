@@ -1,3 +1,10 @@
+html,
+body {
+    margin: 0 auto;
+    height: 100%;
+    background-color: rgb(208, 236, 208);
+}
+
 a:hover {
     text-decoration: none;
     background-color: none;
@@ -69,8 +76,8 @@ a {
 /*Calendar styling (selectable.html)*/
 
 #calendar {
-    max-width: 80%;
-    margin: 0 auto;
+    max-width: 100%;
+    margin: 0 5%;
     padding-top: 30px;
 }
 
@@ -93,69 +100,4 @@ a {
     .table {
         max-width: 100%;
     }
-}
-
-
-/*Comment box styling*/
-
-.pb-cmnt-container {
-    font-family: Lato;
-    margin-top: 100px;
-    margin-bottom: 20px;
-}
-
-.pb-cmnt-textarea {
-    resize: none;
-    padding: 20px;
-    height: 130px;
-    width: 100%;
-    border: 1px solid #F2F2F2;
-}
-
-
-/*Comment-display box styling*/
-
-.user_name {
-    font-size: 14px;
-    font-weight: bold;
-}
-
-.media-left>img {
-    width: 30px;
-    height: 35px;
-    padding: 2px;
-}
-
-.comments-list .media {
-    border-bottom: 1px dotted #ccc;
-    padding: 5px;
-}
-
-#comment-display {
-    margin-bottom: 10px;
-}
-
-
-/*footer styling*/
-
-.footer {
-    width: 100%;
-    height: auto;
-    background-color: #000;
-    margin-top: 30px;
-    padding: 5px;
-    text-align: center;
-}
-
-.footer span {
-    border-right: 2px solid #333;
-}
-
-.footer a {
-    padding: 3px;
-    color: #219433;
-}
-
-.footer p {
-    font-weight: bolder;
 }

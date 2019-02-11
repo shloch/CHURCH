@@ -49,7 +49,7 @@ if ($getDates != FALSE) {
                             if ($rows != FALSE) {
                             foreach ($rows as $deroulement ) {
                             ?>
-							<tr class="table-primary">
+							<tr class="table-light">
                                 
                                 <?php 
                                 $allChant = $this->db_chant->selectAll_ByCalenderID_ByDeroulementID($calenderID, $deroulement->id);

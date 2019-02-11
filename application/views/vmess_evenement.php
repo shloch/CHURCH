@@ -13,21 +13,41 @@ function dateToFrench($date, $format)
 ?>
 
 
-<section id='activites'>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8' />
+<meta name="description" content="Lwanga Kisito">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="<?php echo base_url() ?>css/messEvenement.css">
+  <link rel="stylesheet" href="<?php echo base_url() ?>css/index_copy.css">
+  <!-- font awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<title><?php echo $title; ?></title>
+  <link rel="icon" type= "image/jpg" href="<?php echo base_url() ?>img/logoIcon.jpg">
+</head>
+<body>
+<?php $this->load->view('design/nav_bar.php'); ?>
+
+
       <div class="member-title">
         <h3 class="membres">Mess et Evenements</h3>
       </div>
 
-
       <div id='calendar'>
         <div class="container table-responsive">
           <div class="row">
-            
             <!-------JANUARY-------->
             <?php
             $all_months = $this->db_event->selectByMonth(1);
             if ($all_months == TRUE) {
             ?>
+
             <div class="col-3">
               <table class="table">
                 <thead class="thead-light">
@@ -38,15 +58,13 @@ function dateToFrench($date, $format)
                 </thead>
                 <tbody>
 
-                  <?php
-                  foreach ($all_months as $each_month) {              
-                                          
+                   <?php
+                  foreach ($all_months as $each_month) {                                     
                   ?>
                   <tr>
                     <th scope="row">
-                    <?php echo dateToFrench(date('Y-m-d',$each_month->timestamp),'l ') ; ?> <br>
-                    <?php echo dateToFrench(date('Y-m-d',$each_month->timestamp),'j') ; ?> <br>
-                    
+                          <?php echo dateToFrench(date('Y-m-d',$each_month->timestamp),'l ') ; ?> <br>
+                          <?php echo dateToFrench(date('Y-m-d',$each_month->timestamp),'j') ; ?> <br>
                     </th>
 
                     <td>
@@ -68,12 +86,15 @@ function dateToFrench($date, $format)
                   <?php 
                   }
                   ?>
+                  
                 </tbody>
               </table>
             </div>
             <?php 
             }
             ?>
+
+
 
             <!-------FEBRUARY-------->
             <?php
@@ -126,6 +147,7 @@ function dateToFrench($date, $format)
             <?php 
             }
             ?>
+
 
             <!-------MARS-------->
             <?php
@@ -661,11 +683,21 @@ function dateToFrench($date, $format)
 
 
             
+           
+            
           </div>
         </div>
       </div>
-</section>
-
 
   <hr />
   
+	<!------comment section --->
+  <?php $this->load->view($comments); ?>
+<!------comment section [END]--->
+		
+	<section id='footer'>
+    <?php $this->load->view('design/footer.php'); ?>
+  </section>
+    
+</body>
+</html>

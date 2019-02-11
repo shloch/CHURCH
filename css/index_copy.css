@@ -5,6 +5,31 @@ body {
     background-color: rgb(208, 236, 208);
 }
 
+.table td,
+.table th {
+    /* padding: .75rem; */
+    vertical-align: top;
+    border-top: 1px solid#dee2e6;
+}
+
+.main-container {
+    padding: 30px;
+}
+
+.main-container2 {
+    max-width: 75%;
+    margin: 0 auto;
+    background-color: white;
+}
+
+.img-thumbnail {
+    width: 300px;
+    height: 150px;
+    border-radius: 50%;
+    margin-top: 10px;
+    margin-left: 25px;
+}
+
 .navbar-brand>img {
     width: 230px;
     height: 100px;
@@ -24,10 +49,14 @@ a:hover {
     background-color: #71a812;
 }
 
-a {
+a,
+{
     color: #219433;
-    padding-right: 20px;
-    text-decoration: none;
+    font-size: 0.7em;
+}
+
+td {
+    font-size: 0.7em;
 }
 
 .navbar-light .navbar-nav .active>.nav-item {

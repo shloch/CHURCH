@@ -17,6 +17,17 @@
     <link rel="stylesheet" href="<?php echo base_url() ?>css/contact.css">
     <link rel="stylesheet" href="<?php echo base_url() ?>css/messEvenement.css">
 	
+  <style>
+    body {   
+    background-color: rgb(208, 236, 208);
+    }
+
+
+    .table-bordered td, .table-bordered th {
+    border: 1px solid #989898;
+    }
+
+  </style>
 
 	 <title><?php echo $title; ?></title>
 	 <link rel="icon" type= "image/jpg" href="<?php echo base_url() ?>img/logoIcon.jpg">

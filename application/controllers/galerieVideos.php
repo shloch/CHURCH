@@ -4,11 +4,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class GalerieVideos extends CI_Controller {
 
 
+
+	function __construct() {
+        parent::__construct();
+        $this->load->helper('captcha');
+        $this->load->model('Mgalerie_videos', 'db_table');
+        //$this->load->model('Mskills', 'skills');
+        //$this->load->model('Mcompany', 'company');
+		//$this->load->model('Maward', 'award');
+        $this->load->helper('file');
+        //$this->output->enable_profiler(TRUE);
+    }
+
 	public function index()
 	{
         $data['title'] = "Chorale Lwanga Kisito - Ils en parlent";
         $data['include'] = "vGalerieVideos.php";
 		$data['comments'] = "comments.php";
+		$rows = $this->db_table->selectAll(); //returns result() or FALSE
+        $data['rows'] = $rows;
 		// ============CAPTCHA===================================       
 		$vals = array(
 			'img_path' => './img/captcha/',              
