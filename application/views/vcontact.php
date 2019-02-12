@@ -22,20 +22,20 @@
               <p>N'hésitez pas à remplir le formulaire de contact ou visiter nos sites et réseaux sociaux tels que facebook,Whatsapp,Twitter.</p>
               <div class="row">
                 <div class="col-md-8 col-md-offset-2">
-                  <form class="form-horizontal">
-                    <div class="form-group">
-                      <label for="exampleInputName2">Nom</label>
-                      <input type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputEmail2">Email</label>
-                      <input type="email" class="form-control" id="exampleInputEmail2" placeholder="jane.doe@example.com">
-                    </div>
-                    <div class="form-group ">
-                      <label for="exampleInputText">Votre Message</label>
-                     <textarea  class="form-control" placeholder="Description"></textarea> 
-                    </div>
-                    <button type="submit" class="btn btn-default">Envoyez</button>
+                  <form class="form-horizontal" action="<?php echo base_url() . 'index.php/Contact/send_emails/'; ?>" method="POST">
+                      <div class="form-group">
+                        <label for="exampleInputName2">Nom</label>
+                        <input type="text" name="nom" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputEmail2">Email</label>
+                        <input type="email" name="email" class="form-control" id="exampleInputEmail2" placeholder="jane.doe@example.com">
+                      </div>
+                      <div class="form-group ">
+                        <label for="exampleInputText">Votre Message</label>
+                      <textarea  class="form-control"  name="msg" placeholder="Description"></textarea> 
+                      </div>
+                      <button type="submit" class="btn btn-default">Envoyez</button>
                   </form>
                   <hr>
                   <h3>Nos Reseaux socio</h3>
