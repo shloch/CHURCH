@@ -27,9 +27,9 @@ if ($getDates != FALSE) {
 		<div class="member-title">
 		   <h3 class="membres">Program de ce Jour (<?php echo $collectDates; ?> )</h3>
 		</div>
-
         
 		<div class="container table-responsive">
+        
 			<div class="row" id="second-container">
 				<div class="col-sm">
 					<table class="table table-bordered table-sm table-hover">

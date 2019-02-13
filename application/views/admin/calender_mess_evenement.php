@@ -20,6 +20,8 @@ function dateToFrench($date, $format)
 <center>
 
 <a href="<?php echo base_url().'index.php/Admin_mess_evenement/add_calender_celebration/'; ?>"  title="Ajouter une celebration dans le Calendrier"> <img src="<?php echo base_url(); ?>img/add.jpeg" alt="+"/> AJOUTER UNE CELEBRATION DANS LE CALENDRIER</a><br/><br/>
+
+<a href="<?php echo base_url().'index.php/Admin_mess_evenement/editCode/'; ?>"  title="Ajouter une celebration dans le Calendrier"> <img src="<?php echo base_url(); ?>img/edit.jpeg" alt="+"/> MODIFIER LE CODE POUR VOIR FICHIERS TELECHARGABLE</a><br/><br/>
 </center>
 
 <div> <!---janvier --->            

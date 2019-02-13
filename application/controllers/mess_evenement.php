@@ -67,8 +67,29 @@ class Mess_evenement extends CI_Controller {
        
 	}
 
-
+     /**
+     * display WITHOUT downloadable files
+     */
 	function displayListDeroulement($calenderID){
+        $rows = $this->db_deroulement->selectAllByCalenderID($calenderID); //get all derouelemt
+
+        //$rows = $this->db_chant->selectAllByCalenderID($calenderID); //from Calender, deroulement & chants TABLES 
+        if ($rows != FALSE) {
+            $data['title'] = "List des deroulements";
+            $data['include'] = "__vmess_evenement2.php"; 
+            $data['calenderID'] = $calenderID;  //to remove
+            $data['error'] = '';
+            $data['rows'] = $rows;
+            $this->load->view('template', $data);
+        } else {
+            $this->detail_event($calenderID);
+        }     
+    }
+
+    /**
+     * display with downloadable files
+     */
+    function displayListDeroulement2($calenderID){
         $rows = $this->db_deroulement->selectAllByCalenderID($calenderID); //get all derouelemt
 
         //$rows = $this->db_chant->selectAllByCalenderID($calenderID); //from Calender, deroulement & chants TABLES 
@@ -76,11 +97,40 @@ class Mess_evenement extends CI_Controller {
             $data['title'] = "List des deroulements";
             $data['include'] = "vmess_evenement2.php"; 
             $data['calenderID'] = $calenderID;  //to remove
-            //$data['all_chant'] = $rows;
+            $data['error'] = '';
             $data['rows'] = $rows;
             $this->load->view('template', $data);
         } else {
             $this->detail_event($calenderID);
         }     
+    }
+
+
+    function getCode($calenderID) {
+        if (isset($_POST)) {// if posted
+            $this->form_validation->set_rules('passcode', 'passcode', 'required');
+            if ($this->form_validation->run() == FALSE) {
+				$this->detail_event($calenderID);
+            } else {
+                $passcode = $this->input->post('passcode');
+
+                $row = $this->db_event->getcode($passcode);
+                if ($row != FALSE) {
+                    if ($row->code == $passcode) {
+                        //$this->displayListDeroulement2($calenderID);
+                        redirect('Mess_evenement/displayListDeroulement2/'.$calenderID,'refresh');
+                    } else {
+                        $this->session->set_flashdata('error', "MAUVAIS CODE");
+                    }
+                }else{
+                    $this->session->set_flashdata('error', "AUCUN CODE CREER PAR ADMIN");
+                    
+                }
+                $this->detail_event($calenderID);
+                
+            }
+        }else{
+            $this->detail_event($calenderID);
+        }
     }
 }

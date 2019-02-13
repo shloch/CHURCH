@@ -15,10 +15,6 @@ a:hover {
     color: #000;
 }
 
-td {
-    border: 1px solid black;
-}
-
 .dropdown-item:hover {
     background-color: #71a812;
 }

@@ -8,6 +8,7 @@ class Mcalender_evenement extends CI_Model {
     //var $type_of_document = 'kj_type_of_document';
     var $db_chants = 'chants_evenement';
     var $db_deroulement = 'deroulement_evenement';
+    var $db_passcode = 'passcode';
 
     function __construct() {
         // Call the Model constructor
@@ -70,6 +71,8 @@ class Mcalender_evenement extends CI_Model {
         }
     }
 
+    
+
     /**
      * save edited
      */
@@ -128,8 +131,25 @@ class Mcalender_evenement extends CI_Model {
     }
 
  
+    //get passcode to display full calender infos
+    function getcode($code) {
+        $this->db->select('*');
+        $query = $this->db->get($this->db_passcode);
+        if ($query->num_rows() > 0) {
+            $row = $query->row();
+            return $row;
+        } else {
+            return FALSE;
+        }
+    }
 
-
+    function save_new_code($new_code) {
+        $data = array(
+            'code' => $new_code
+        );
+        $this->db->update($this->db_passcode, $data);
+        
+    }
 
    
     

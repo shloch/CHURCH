@@ -273,4 +273,35 @@ class Admin_mess_evenement extends CI_Controller {
         }
     }
 
+    function editCode() {
+        $logged = $this->session->userdata('member_id');
+        if (isset($logged) && $logged != FALSE) {
+            $data['title'] = "MODIFIER CODE";
+            //$data['include'] = "admin/modify_download_code.php";    
+            $this->load->view('admin/modify_download_code.php', $data);
+        }else {
+            redirect('admin','refresh');
+        }
+    }
+
+    function saveCode() {
+        $logged = $this->session->userdata('member_id');
+        if (isset($logged) && $logged != FALSE) {
+            if (isset($_POST)) {// if posted
+                $this->form_validation->set_rules('passcode', 'passcode', 'required');
+                if ($this->form_validation->run() == FALSE) {
+                    $this->editCode();
+                } else {
+                    $code = $this->input->post('passcode');
+                    $updateStatus = $this->db_table->save_new_code($code);
+                    
+                    redirect('Admin_mess_evenement','refresh');
+                    
+                }
+            }
+        }else {
+            redirect('admin','refresh');
+        }
+    }
+
 }
