@@ -20,6 +20,8 @@
             <div class="container">
               <h2>Nous contacter</h2>
               <p>N'hésitez pas à remplir le formulaire de contact ou visiter nos sites et réseaux sociaux tels que facebook,Whatsapp,Twitter.</p>
+              <?php echo validation_errors(); ?>
+              <br> <em style="color:orange;"> <?php echo $this->session->flashdata('error'); ?> </em> <br> <br>
               <div class="row">
                 <div class="col-md-8 col-md-offset-2">
                   <form class="form-horizontal" action="<?php echo base_url() . 'index.php/Contact/send_emails/'; ?>" method="POST">
@@ -38,7 +40,7 @@
                       <button type="submit" class="btn btn-default">Envoyez</button>
                   </form>
                   <hr>
-                  <h3>Nos Reseaux socio</h3>
+                  <h3>Nos Reseaux sociaux</h3>
                   <a href="#"><i class="fa fa-facebook-square" style="font-size:48px;color:#0952a0"></i></a>
                   <a href="#"><i class="fa fa-instagram" style="font-size:48px;color:red"></i></a>
                   <a href="#"><i class="fa fa-twitter-square" style="font-size:48px;color:#47cad8"></i></a>

@@ -1,6 +1,7 @@
 <footer class="footer_admin">
 				
 				<a class="media-left" href="<?php echo base_url(); ?>">RETOUR AU SITE</a> |
+				<a class="media-left" href="<?php echo base_url().'index.php/Admin/read_messages/'; ?>">LIRE MESSAGES</a> |
 				
 				<?php
 				$logged = $this->session->userdata('member_id');
