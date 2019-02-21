@@ -7,6 +7,8 @@
 				<span></span>
 				<a class="media-left" href="<?php echo base_url().'index.php/mess_evenement'; ?>">Nos programmes</a>
 				<span></span>
+				<a href="http://webmail.cpanel-just2000.justhost.com/logout/?locale=en"> Portail email </a>
+				<span></span>
 				<a class="media-left" href="<?php echo base_url().'index.php/admin'; ?>">#</a>
 				<div>
 					<a href="#"><i class="fa fa-facebook-square" style="font-size:20px;color:#0952a0"></i></a>

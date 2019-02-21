@@ -1,4 +1,3 @@
-html,
 body {
     margin: 0 auto;
     height: 100%;
@@ -99,5 +98,10 @@ a {
     }
     .table {
         max-width: 100%;
+        background-color: white;
     }
+}
+
+.col-3 table {
+    background-color: white;
 }
