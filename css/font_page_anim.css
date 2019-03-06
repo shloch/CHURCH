@@ -1,0 +1,38 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+h7 {
+    font-family: 'Righteous', cursive;
+}
+
+.navbar-expand-lg .navbar-nav a {
+    text-shadow: 3px 6px 5px rgba(0, 0, 0, .2);
+}
+
+div[class="card-group"] {
+    box-shadow: 4px 10px 10px -9px rgba(0, 0, 0, 0.75);
+}
+
+div[class="card-group"] div[class="card p-3"] img {
+    border: 0.4em solid #C7EAC6;
+    border-radius: 0.5em;
+    height: auto;
+    will-change: transform;
+    transform: rotate(-4deg);
+    -webkit-transform: rotate(-4deg);
+    -o-transform: rotate(-4deg);
+    -moz-transform: rotate(-4deg);
+    transition: transform .2s ease-out;
+    box-shadow: 4px 10px 10px -9px rgba(0, 0, 0, 0.75);
+}
+
+div[class="card-group"] div[class="card p-3"] img:hover {
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    transition: transform .2s ease-out;
+}

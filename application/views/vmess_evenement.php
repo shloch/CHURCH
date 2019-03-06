@@ -20,6 +20,9 @@
 <script src='<?php echo base_url() ?>js/moment.min.js'></script>
 <script src='<?php echo base_url() ?>js/jquery.min.js'></script>
 <script src='<?php echo base_url() ?>js/fullcalendar.min.js'></script>
+
+<link rel="stylesheet" href="<?php echo base_url() ?>css/font_page_anim.css">
+	<link href="https://fonts.googleapis.com/css?family=Cabin|Righteous" rel="stylesheet">
 <script>
 
   $(document).ready(function() {
