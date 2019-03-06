@@ -9,6 +9,7 @@ class Admin extends CI_Controller {
         $this->load->library('form_validation');
         $this->load->helper('captcha');
         $this->load->model('Muser', 'user');
+        $this->load->model('Mcontact', 'contact');
         //$this->load->model('Mskills', 'skills');
         //$this->load->model('Mcompany', 'company');
 		//$this->load->model('Maward', 'award');
@@ -38,6 +39,7 @@ class Admin extends CI_Controller {
         if (isset($logged) && $logged != FALSE) {
             $data['title'] = "Chorale Lwanga Kisito";
             $data['include'] = "admin/admin.php";
+            $data['unread_msg'] = $this->contact->count_unread();
 
             $this->load->view('template2', $data);
         } else {
@@ -52,6 +54,9 @@ class Admin extends CI_Controller {
         $data['title'] = "Log into your account";
         $data['include'] = "admin/login_page.php";
 
+        $captcha_folder = './img/captcha/';
+		delete_files($captcha_folder);
+
         $this->load->view('template2', $data);
 	}
 
@@ -64,7 +69,23 @@ class Admin extends CI_Controller {
             redirect('/admin/');
         }
 
-	}
+    }
+    
+    function read_messages() {
+        $logged = $this->session->userdata('member_id');
+        if (isset($logged) && $logged != FALSE) {
+            /** first convert 'UNREAD' to 'READ' messages */
+            $this->contact->update_msg_statuses();
+            //==============================================
+            $data['title'] = "Chorale Lwanga Kisito";
+            $data['include'] = "admin/read_contact_messages.php";
+            $data['rows'] = $this->contact->get_unread();
+
+            $this->load->view('template2', $data);
+        } else {
+            $this->login_page();
+        }
+    }
 	
 	function signIn() {
 		if (isset($_POST)) {// if posted

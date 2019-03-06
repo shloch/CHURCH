@@ -12,8 +12,8 @@
             
             <div>
 
-                    <label>Date de l'activites [jj/mm/yyyy]</label><br/>
-                    <input type="text" name="date_act" value="<?php echo $row->date_act; ?>" size="50" /> <br/> <br/>
+                    <label>Date de l'activites</label><br/>
+                    <input type="text" name="date_act" class="datepicker" value="<?php echo date('Y-m-d',$row->date_act); ?>" size="50" /> <br/> <br/>
 
 
                     <label>Activite</label><br/>

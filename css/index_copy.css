@@ -1,0 +1,160 @@
+html,
+body {
+    margin: 0 auto;
+    height: 100%;
+    background-color: rgb(208, 236, 208);
+}
+
+.table td,
+.table th {
+    /* padding: .75rem; */
+    vertical-align: top;
+    border-top: 1px solid#dee2e6;
+}
+
+.main-container {
+    padding: 30px;
+}
+
+.main-container2 {
+    max-width: 75%;
+    margin: 0 auto;
+    background-color: white;
+}
+
+.img-thumbnail {
+    width: 300px;
+    height: 150px;
+    border-radius: 50%;
+    margin-top: 10px;
+    margin-left: 25px;
+}
+
+.navbar-brand>img {
+    width: 230px;
+    height: 100px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #219433;
+}
+
+a:hover {
+    text-decoration: none;
+    background-color: none;
+    color: #000;
+}
+
+.dropdown-item:hover {
+    background-color: #71a812;
+}
+
+a,
+{
+    color: #219433;
+    font-size: 0.7em;
+}
+
+td {
+    font-size: 0.7em;
+}
+
+.navbar-light .navbar-nav .active>.nav-item {
+    color: hotpink;
+}
+
+#carousel {
+    width: 80%;
+    margin: auto;
+}
+
+.carousel-inner>.carousel-item>img {
+    width: 80%;
+    height: 460px;
+}
+
+#infos {
+    width: 70%;
+    position: relative;
+    top: 15px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.card-group>.card>img {
+    width: 100%;
+    height: auto;
+}
+
+.card-title {
+    font-weight: bolder;
+    text-decoration: underline #71a812;
+}
+
+hr {
+    margin-top: 40px;
+    width: 80%;
+}
+
+
+/*Comment box styling*/
+
+.pb-cmnt-container {
+    font-family: Lato;
+    margin-top: 100px;
+    margin-bottom: 20px;
+}
+
+.pb-cmnt-textarea {
+    resize: none;
+    padding: 20px;
+    height: 130px;
+    width: 100%;
+    border: 1px solid #F2F2F2;
+}
+
+
+/*Comment-display box styling*/
+
+.user_name {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.media-left>img {
+    width: 30px;
+    height: 35px;
+    padding: 2px;
+}
+
+.comments-list .media {
+    border-bottom: 1px dotted #ccc;
+    padding: 5px;
+}
+
+
+/*footer styling*/
+
+.footer {
+    width: 100%;
+    height: auto;
+    background-color: #000;
+    margin-top: 30px;
+    padding: 5px;
+    text-align: center;
+}
+
+.footer span {
+    border-right: 2px solid #333;
+}
+
+.footer a {
+    padding: 3px;
+    color: #219433;
+}
+
+.footer p {
+    font-weight: bolder;
+}

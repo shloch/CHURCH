@@ -78,7 +78,10 @@ class Admin_activites extends CI_Controller {
                 $libelle = $this->input->post('libelle');
                 $description = $this->input->post('description');
 
-                $updateStatus = $this->db_table->update($ID, $date_act, $libelle, $description);
+                $str_dates = explode("-", $date_act); //$month_array = array("", "janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre");
+                $timestamp = strtotime($date_act);  //convert to timestamp
+
+                $updateStatus = $this->db_table->update($ID, $timestamp, $libelle, $description);
                 if ($updateStatus == TRUE) {
                     $this->session->set_flashdata('success', "MISE A JOUR AVEC SUCCESS  !!!");
                 }else{
@@ -115,7 +118,10 @@ class Admin_activites extends CI_Controller {
                 $libelle = $this->input->post('libelle');
                 $description = $this->input->post('description');
 
-                $updateStatus = $this->db_table->save($date_act, $libelle, $description);
+                $str_dates = explode("-", $date_act); //$month_array = array("", "janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre");
+                $timestamp = strtotime($date_act);  //convert to timestamp
+
+                $updateStatus = $this->db_table->save($timestamp, $libelle, $description);
                 if ($updateStatus == TRUE) {
                     $this->session->set_flashdata('success', "MISE A JOUR AVEC SUCCESS  !!!");
                 }else{

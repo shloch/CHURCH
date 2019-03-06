@@ -1,9 +1,13 @@
+
+
 <footer class="footer">
 				<a class="media-left" href="<?php echo base_url().'index.php/contact'; ?>">Contact</a>
 				<span></span>
 				<a class="media-left" href="<?php echo base_url().'index.php/activites'; ?>">Nos activites</a>
 				<span></span>
 				<a class="media-left" href="<?php echo base_url().'index.php/mess_evenement'; ?>">Nos programmes</a>
+				<span></span>
+				<a href="http://webmail.cpanel-just2000.justhost.com/logout/?locale=en"> Portail email </a>
 				<span></span>
 				<a class="media-left" href="<?php echo base_url().'index.php/admin'; ?>">#</a>
 				<div>

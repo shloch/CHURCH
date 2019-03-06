@@ -1,69 +1,82 @@
+
+<?php 
+$AllRows = $this->comments->selectAll();
+?>
+
 <section id="comment-box">
+				<center><?php echo 'Ajouter un commentaire' ; ?></center>
 				<div class="container pb-cmnt-container">
 					<div class="row">
+							
 							<div class="col-md-6 offset-md-3">
-									<div class="card card-info">
+								<form action="<?php echo base_url() . 'index.php/Comments/save/'; ?>" method="POST">
+									<div class="card card-info">					
+											<input type="text" placeholder="Prenom" name="prenom">
 											<div class="card-block">
-												<textarea placeholder="Vos commentaires ici!" class="pb-cmnt-textarea"></textarea>
+												
+												<textarea placeholder="Vos commentaires ici!" name="msg" class="pb-cmnt-textarea"></textarea>
 											</div>
-											<button class="btn btn-outline-success float-xs-right" type="button">Partagez</button>
+											
+											<!--reserved for the CAPTCHA----------------------->
+											
+											<div>
+
+													<input type="hidden" value="<?php echo $CAPTCHA['word'] ?>"    name="captchaWord" > 
+													
+													
+													<input type="text" value=""    name="captchaInput" placeholder="Recopier text de l'image"/>
+													<?php
+													echo $CAPTCHA['image'] . ' ';
+													//echo $CAPTCHA['word'];
+													?>
+
+											</div>
+											<button class="btn btn-outline-success float-xs-right" type="submit">Partagez</button>
 									</div>
+								</form>
+									
 							</div>
 					</div>
 			</div>
 		</section>
+
+		
+		
 		<section id="comment-display">
 				<div class="container">
 					<div class="row">
 							<div class="col-md-8">
-								<div class="page-header">
-									<h1> Les Commentaires </h1>
-								</div> 
+								
+									<h1> <?php echo ($AllRows == FALSE) ? '' : 'Les Commentaires' ; ?>  </h1>
+								
 								<div class="comments-list">
-										<div class="media">
-												<p class="pull-right"><small>5 days ago</small></p>
-													<a class="media-left" href="#">
-														<img src="<?php echo base_url() ?>img/commenter.png">
-													</a>
-													<div class="media-body">
-														<h4 class="media-heading user_name">Meemee Kouper</h4>
-														<p></p>Wow! this is really great.</p>
-													</div>
-											</div>
-										<div class="media">
-												<p class="pull-right"><small>5 days ago</small></p>
-													<a class="media-left" href="#">
-														<img src="<?php echo base_url() ?>img/commenter.png">
-													</a>
-													<div class="media-body">
-															
-														<h4 class="media-heading user_name">Tom Tom</h4>
-														Wow! this is really great.
-													</div>
-											</div>
-										<div class="media">
-												<p class="pull-right"><small>5 days ago</small></p>
-													<a class="media-left" href="#">
-														<img src="<?php echo base_url() ?>img/commenter.png">
-													</a>
-													<div class="media-body">
-															
-														<h4 class="media-heading user_name">John Doe</h4>
-														Wow! this is really great.
-													</div>
-											</div>
-										<div class="media">
-												<p class="pull-right"><small>5 days ago</small></p>
-													<a class="media-left" href="#">
-														<img src="<?php echo base_url() ?>img/commenter.png">
-													</a>
-													<div class="media-body">
-															
-														<h4 class="media-heading user_name">Jane Doe</h4>
-														Wow! this is really great.
-														
-													</div>
-												</div>
+										
+
+										<?php
+											
+											if ( $AllRows != FALSE ) {
+											foreach ($AllRows as $row) {						
+											?>
+														<div class="media">
+															<p class="pull-right"><small><?php echo $row->comment_date; ?></small></p>
+															<a class="media-left" href="#">
+																<img src="<?php echo base_url() ?>img/commenter.png">
+															</a>
+															<div class="media-body">
+																	
+																<h4 class="media-heading user_name"><?php echo $row->prenom; ?></h4>
+																<?php echo $row->msg; ?>
+															</div>
+														</div>
+												
+											<?php
+												}
+											}
+
+										?>
+										
+
+
 								</div>
 									
 									

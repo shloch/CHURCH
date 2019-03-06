@@ -6,144 +6,44 @@
         <div class="container">
             <div class="row">
             
-                <!--team-1-->
-                <div class="col-lg-4">
-                <div class="our-team-main">
+                <?php
+                    if ($rows == FALSE) {
+                        echo "<center><br/><br/><h2> AUCUN MESSAGE POUR L'INSTANT !!!</h2></center>";
+                    } else {
+                        foreach ($rows as $row) {   
+                ?>
+                        <!-----------------[start] team-1-------------------------->
+                        <div class="col-lg-4">
+                        <div class="our-team-main">
+                        
+                        <div class="team-front">
+                            <?php
+                                if ($row->photo_url == 'NONE') {
+                                ?>
+                                   <img src="<?php echo base_url().'img/notre_equipe/default.jpeg';?>" class="img-fluid" alt="Photo Membre" />
+                                <?php
+                                } else {
+                                ?>
+                                    <img src="<?php echo base_url().'img/notre_equipe/'.$row->photo_url;?>" alt="Photo Membre" class="img-fluid"/>
+                                <?php
+                                }
+                            ?>
+                        <h3><?php echo $row->nom; ?></h3>
+                        <p><?php echo $row->role; ?></p>
+                        </div>
+                        
+                        <div class="team-back" style="text-align:justify">
+                        <span><?php echo $row->msg; ?></span>
+                        </div>
+                        
+                        </div>
+                        </div>
+                        <!---------------[end]  team-1--------------------------->
+                        <?php
+                        }}
+                        ?>
                 
-                <div class="team-front">
-                <img src="<?php echo base_url(); ?>img/equipe1.jpeg" class="img-fluid" />
-                <h3>Nom du membre</h3>
-                <p>post du membre</p>
-                </div>
                 
-                <div class="team-back">
-                <span>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis 
-                natoque penatibus et magnis dis parturient montes,
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis 
-                natoque.
-                </span>
-                </div>
-                
-                </div>
-                </div>
-                <!--team-1-->
-                
-                <!--team-2-->
-                <div class="col-lg-4">
-                <div class="our-team-main">
-                
-                    <div class="team-front">
-                        <img src="<?php echo base_url(); ?>img/equipe1.jpeg" class="img-fluid" />
-                        <h3>Nom du membre</h3>
-                        <p>post du membre</p>
-                    </div>
-                                
-                
-                <div class="team-back">
-                <span>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis 
-                natoque penatibus et magnis dis parturient montes,
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis 
-                natoque.
-                </span>
-                </div>
-                
-                </div>
-                </div>
-                <!--team-2-->
-                
-                <!--team-3-->
-                <div class="col-lg-4">
-                <div class="our-team-main">
-                
-                    <div class="team-front">
-                        <img src="<?php echo base_url(); ?>img/equipe1.jpeg" class="img-fluid" />
-                        <h3>Nom du membre</h3>
-                        <p>post du membre</p>
-                    </div>
-                
-                <div class="team-back">
-                <span>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis 
-                natoque penatibus et magnis dis parturient montes,
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis 
-                natoque.
-                </span>
-                </div>
-                
-                </div>
-                </div>
-                <!--team-3-->
-                
-                <!--team-4-->
-                <div class="col-lg-4">
-                <div class="our-team-main">
-                
-                    <div class="team-front">
-                        <img src="<?php echo base_url(); ?>img/equipe1.jpeg" class="img-fluid" />
-                        <h3>Nom du membre</h3>
-                        <p>post du membre</p>
-                    </div>
-                
-                <div class="team-back">
-                <span>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis 
-                natoque penatibus et magnis dis parturient montes,
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis 
-                natoque.
-                </span>
-                </div>
-                
-                </div>
-                </div>
-                <!--team-4-->
-                
-                <!--team-5-->
-                <div class="col-lg-4">
-                <div class="our-team-main">
-                
-                    <div class="team-front">
-                         <img src="<?php echo base_url(); ?>img/equipe1.jpeg" class="img-fluid" />
-                         <h3>Nom du membre</h3>
-                         <p>post du membre</p>
-                    </div>
-                
-                    <div class="team-back">
-                    <span>
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis 
-                    natoque penatibus et magnis dis parturient montes,
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis 
-                    natoque.
-                    </span>
-                    </div>
-                
-                </div>
-                </div>
-                <!--team-5-->
-                
-                <!--team-6-->
-                <div class="col-lg-4">
-                <div class="our-team-main">
-                
-                    <div class="team-front">
-                        <img src="<?php echo base_url(); ?>img/equipe1.jpeg" class="img-fluid" />
-                        <h3>Nom du membre</h3>
-                        <p>post du membre</p>
-                    </div>
-                
-                <div class="team-back">
-                <span>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis 
-                natoque penatibus et magnis dis parturient montes,
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis 
-                natoque.
-                </span>
-                </div>
-                
-                </div>
-                </div>
-                <!--team-6-->
             
             </div>
         </div>

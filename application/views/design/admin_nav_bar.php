@@ -1,14 +1,18 @@
 <section id="navbar">
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 			<div class="container-fluid">
-		  <a class="navbar-brand" href="#">ADMINISTRATION</a>
+		  <a class="navbar-brand" href="<?php echo base_url().'index.php/Admin'; ?>">ADMINISTRATION</a>
 		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		    <span class="navbar-toggler-icon"></span>
 		  </button>
 
 		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
 		    <ul class="navbar-nav mx-auto">
-		      
+
+				<li class="nav-item nav-link active">
+		        <a class="nav-item" href="<?php echo base_url().'index.php/admin_acceuil'; ?>">ACCEUIL</a>
+					</li>
+					
 		      <li class="nav-item nav-link active">
 		        <a class="nav-item" href="<?php echo base_url().'index.php/admin_notre_equipe'; ?>">Notre Equipe</a>
 		      </li>
@@ -30,7 +34,7 @@
 		        <a class="nav-item" href="<?php echo base_url().'index.php/admin_activites'; ?>">Nos Activites</a>
 		      </li>
 		      <li class="nav-item nav-link">
-		        <a class="nav-item" href="<?php echo base_url().'index.php/admin_ilsEnParlent'; ?>">Ils en parlent</a>
+		        <a class="nav-item" href="<?php echo base_url().'index.php/Admin_ilsEnParlent'; ?>">Ils en parlent</a>
 		      </li>
 		      <li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" href="#" id="secondNavbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

@@ -16,14 +16,29 @@
     <link rel="stylesheet" href="<?php echo base_url() ?>css/galerieVideos.css">
     <link rel="stylesheet" href="<?php echo base_url() ?>css/contact.css">
     <link rel="stylesheet" href="<?php echo base_url() ?>css/admin_content.css">
+    <link rel="stylesheet" href="<?php echo base_url() ?>css/calender_events.css">
 	
 <!-- Calender CSS -->
-    <link href='<?php echo base_url();?>css/fullcalendar.min.css' rel='stylesheet' />
-    <link href='<?php echo base_url();?>css/fullcalendar.print.min.css' rel='stylesheet' media='print' />
-    <link href="<?php echo base_url();?>css/messEvenement.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script type="text/javascript" src="<?php echo base_url() ?>js/datepicker-master/datepicker.js"></script>
+<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>js/datepicker-master/datepicker.css"/>
 <!-- Calender CSS {end} -->
 
+	<!-- ANIMATED SONGS TABLE -->
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>css/Table_Highlight_Vertical_Horizontal/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>css/Table_Highlight_Vertical_Horizontal/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>css/Table_Highlight_Vertical_Horizontal/vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>css/Table_Highlight_Vertical_Horizontal/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>css/Table_Highlight_Vertical_Horizontal/vendor/perfect-scrollbar/perfect-scrollbar.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>css/Table_Highlight_Vertical_Horizontal/css/util.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>css/Table_Highlight_Vertical_Horizontal/css/main.css">
+<!-- ANIMATED SONGS TABLE {end} -->
 
 	 <title><?php echo $title; ?></title>
 	 <link rel="icon" type= "<?php echo base_url() ?>image/jpg" href="img/logoIcon.jpg">
@@ -74,7 +89,8 @@
     <!-----TinyMCE ----->
     <script src="<?php echo base_url() ?>js/tinymce/tinymce.min.js"></script>
     <script>tinymce.init({ selector:'textarea' });</script>
-    
+
+
 </body>
 
 </html>

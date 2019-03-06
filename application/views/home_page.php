@@ -16,7 +16,7 @@
 	<link rel="stylesheet" href="<?php echo base_url() ?>css/font_page_anim.css">
 	<link href="https://fonts.googleapis.com/css?family=Cabin|Righteous" rel="stylesheet">
 	 <title>Chorale Lwanga Kisito</title>
-	 <link rel="icon" type= "<?php echo base_url() ?>image/jpg" href="img/logoIcon.jpg">
+	 <link rel="icon" type= "image/jpg" href="<?php echo base_url() ?>img/logoIcon.jpg">
 </head>
 <body>
 
